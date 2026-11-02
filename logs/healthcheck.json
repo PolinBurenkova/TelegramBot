@@ -1,0 +1,62 @@
+{
+  "total": 11,
+  "passed": 11,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "config",
+      "status": "ok",
+      "detail": "db=sqlite, redis=in-memory, env=development"
+    },
+    {
+      "check": "imports",
+      "status": "ok",
+      "detail": "15 модулей"
+    },
+    {
+      "check": "database",
+      "status": "ok",
+      "detail": "12 таблиц"
+    },
+    {
+      "check": "cache",
+      "status": "ok",
+      "detail": "MemoryCache/InMemoryRedis"
+    },
+    {
+      "check": "score",
+      "status": "ok",
+      "detail": "city=15, geo(100км)=4756, msk-spb=633км"
+    },
+    {
+      "check": "users",
+      "status": "ok",
+      "detail": "user=1, level=1"
+    },
+    {
+      "check": "cities",
+      "status": "ok",
+      "detail": "найдено: Москва, на «а»: 2"
+    },
+    {
+      "check": "game_engine",
+      "status": "ok",
+      "detail": "старт=Москва, ответ=Анапа, бот=Астрахань, ходов=3, очки=11, буква=н"
+    },
+    {
+      "check": "geo_game",
+      "status": "ok",
+      "detail": "geo game=ccce9ccc-9fcf-4096-b03d-dc5d777c1b81, 633км, очки=3643"
+    },
+    {
+      "check": "providers",
+      "status": "ok",
+      "detail": "функций=16, cities={'geonames': False, 'nominatim': True, 'opencage': False, 'positionstack': False, 'geoapify': False, 'locationiq': False, 'mapbox_geocoding': False, 'photon': True, 'open_meteo_geocoding': True}, weather={'openweather': False, 'open_meteo': True, 'weather_api': False, 'weatherstack': False, 'visual_crossing': False, 'tomorrow_io': False, 'weatherbit': False, 'meteosource': False, 'accuweather': False}"
+    },
+    {
+      "check": "dispatcher",
+      "status": "ok",
+      "detail": "15 роутеров в root_router"
+    }
+  ]
+}

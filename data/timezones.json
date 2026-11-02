@@ -1,0 +1,330 @@
+[
+  {
+    "tz": "Europe/Kaliningrad",
+    "country_code": "RU",
+    "utc_offset": "+02:00",
+    "dst": false,
+    "abbreviation": "KALT",
+    "cities": ["Калининград", "Советск"]
+  },
+  {
+    "tz": "Europe/Moscow",
+    "country_code": "RU",
+    "utc_offset": "+03:00",
+    "dst": false,
+    "abbreviation": "MSK",
+    "cities": ["Москва", "Санкт-Петербург", "Мурманск"]
+  },
+  {
+    "tz": "Europe/Samara",
+    "country_code": "RU",
+    "utc_offset": "+04:00",
+    "dst": false,
+    "abbreviation": "SAMT",
+    "cities": ["Самара", "Ижевск"]
+  },
+  {
+    "tz": "Asia/Yekaterinburg",
+    "country_code": "RU",
+    "utc_offset": "+05:00",
+    "dst": false,
+    "abbreviation": "YEKT",
+    "cities": ["Екатеринбург", "Челябинск", "Пермь"]
+  },
+  {
+    "tz": "Asia/Omsk",
+    "country_code": "RU",
+    "utc_offset": "+06:00",
+    "dst": false,
+    "abbreviation": "OMST",
+    "cities": ["Омск"]
+  },
+  {
+    "tz": "Asia/Krasnoyarsk",
+    "country_code": "RU",
+    "utc_offset": "+07:00",
+    "dst": false,
+    "abbreviation": "KRAT",
+    "cities": ["Красноярск", "Норильск"]
+  },
+  {
+    "tz": "Asia/Irkutsk",
+    "country_code": "RU",
+    "utc_offset": "+08:00",
+    "dst": false,
+    "abbreviation": "IRKT",
+    "cities": ["Иркутск", "Улан-Удэ"]
+  },
+  {
+    "tz": "Asia/Yakutsk",
+    "country_code": "RU",
+    "utc_offset": "+09:00",
+    "dst": false,
+    "abbreviation": "YAKT",
+    "cities": ["Якутск"]
+  },
+  {
+    "tz": "Asia/Vladivostok",
+    "country_code": "RU",
+    "utc_offset": "+10:00",
+    "dst": false,
+    "abbreviation": "VLAT",
+    "cities": ["Владивосток", "Хабаровск"]
+  },
+  {
+    "tz": "Asia/Magadan",
+    "country_code": "RU",
+    "utc_offset": "+11:00",
+    "dst": false,
+    "abbreviation": "MAGT",
+    "cities": ["Магадан"]
+  },
+  {
+    "tz": "Asia/Sakhalin",
+    "country_code": "RU",
+    "utc_offset": "+11:00",
+    "dst": false,
+    "abbreviation": "SAKT",
+    "cities": ["Южно-Сахалинск"]
+  },
+  {
+    "tz": "Asia/Kamchatka",
+    "country_code": "RU",
+    "utc_offset": "+12:00",
+    "dst": false,
+    "abbreviation": "PETT",
+    "cities": ["Петропавловск-Камчатский"]
+  },
+  {
+    "tz": "Europe/Minsk",
+    "country_code": "BY",
+    "utc_offset": "+03:00",
+    "dst": false,
+    "abbreviation": "MSK",
+    "cities": ["Минск", "Гомель", "Брест"]
+  },
+  {
+    "tz": "Asia/Almaty",
+    "country_code": "KZ",
+    "utc_offset": "+05:00",
+    "dst": false,
+    "abbreviation": "ALMT",
+    "cities": ["Алматы", "Астана", "Караганда"]
+  },
+  {
+    "tz": "Asia/Aqtobe",
+    "country_code": "KZ",
+    "utc_offset": "+05:00",
+    "dst": false,
+    "abbreviation": "AQTT",
+    "cities": ["Актобе"]
+  },
+  {
+    "tz": "Asia/Atyrau",
+    "country_code": "KZ",
+    "utc_offset": "+05:00",
+    "dst": false,
+    "abbreviation": "ATYT",
+    "cities": ["Атырау"]
+  },
+  {
+    "tz": "Europe/Kyiv",
+    "country_code": "UA",
+    "utc_offset": "+02:00",
+    "dst": true,
+    "abbreviation": "EET",
+    "cities": ["Киев", "Харьков", "Одесса"]
+  },
+  {
+    "tz": "Europe/Chisinau",
+    "country_code": "MD",
+    "utc_offset": "+02:00",
+    "dst": true,
+    "abbreviation": "EET",
+    "cities": ["Кишинёв", "Тирасполь"]
+  },
+  {
+    "tz": "Asia/Tbilisi",
+    "country_code": "GE",
+    "utc_offset": "+04:00",
+    "dst": false,
+    "abbreviation": "GET",
+    "cities": ["Тбилиси", "Батуми"]
+  },
+  {
+    "tz": "Asia/Yerevan",
+    "country_code": "AM",
+    "utc_offset": "+04:00",
+    "dst": false,
+    "abbreviation": "AMT",
+    "cities": ["Ереван", "Гюмри"]
+  },
+  {
+    "tz": "Asia/Baku",
+    "country_code": "AZ",
+    "utc_offset": "+04:00",
+    "dst": false,
+    "abbreviation": "AZT",
+    "cities": ["Баку", "Гянджа"]
+  },
+  {
+    "tz": "Asia/Tashkent",
+    "country_code": "UZ",
+    "utc_offset": "+05:00",
+    "dst": false,
+    "abbreviation": "UZT",
+    "cities": ["Ташкент", "Самарканд", "Бухара"]
+  },
+  {
+    "tz": "Asia/Bishkek",
+    "country_code": "KG",
+    "utc_offset": "+06:00",
+    "dst": false,
+    "abbreviation": "KGT",
+    "cities": ["Бишкек", "Ош"]
+  },
+  {
+    "tz": "Asia/Dushanbe",
+    "country_code": "TJ",
+    "utc_offset": "+05:00",
+    "dst": false,
+    "abbreviation": "TJT",
+    "cities": ["Душанбе", "Худжанд"]
+  },
+  {
+    "tz": "Asia/Ashgabat",
+    "country_code": "TM",
+    "utc_offset": "+05:00",
+    "dst": false,
+    "abbreviation": "TMT",
+    "cities": ["Ашхабад", "Туркменабат"]
+  },
+  {
+    "tz": "Europe/Tallinn",
+    "country_code": "EE",
+    "utc_offset": "+02:00",
+    "dst": true,
+    "abbreviation": "EET",
+    "cities": ["Таллин", "Тарту"]
+  },
+  {
+    "tz": "Europe/Riga",
+    "country_code": "LV",
+    "utc_offset": "+02:00",
+    "dst": true,
+    "abbreviation": "EET",
+    "cities": ["Рига", "Даугавпилс"]
+  },
+  {
+    "tz": "Europe/Vilnius",
+    "country_code": "LT",
+    "utc_offset": "+02:00",
+    "dst": true,
+    "abbreviation": "EET",
+    "cities": ["Вильнюс", "Каунас"]
+  },
+  {
+    "tz": "Europe/Warsaw",
+    "country_code": "PL",
+    "utc_offset": "+01:00",
+    "dst": true,
+    "abbreviation": "CET",
+    "cities": ["Варшава", "Краков"]
+  },
+  {
+    "tz": "Europe/Helsinki",
+    "country_code": "FI",
+    "utc_offset": "+02:00",
+    "dst": true,
+    "abbreviation": "EET",
+    "cities": ["Хельсинки", "Турку"]
+  },
+  {
+    "tz": "Europe/Istanbul",
+    "country_code": "TR",
+    "utc_offset": "+03:00",
+    "dst": false,
+    "abbreviation": "TRT",
+    "cities": ["Стамбул", "Анкара"]
+  },
+  {
+    "tz": "Europe/Berlin",
+    "country_code": "DE",
+    "utc_offset": "+01:00",
+    "dst": true,
+    "abbreviation": "CET",
+    "cities": ["Берлин", "Мюнхен"]
+  },
+  {
+    "tz": "Europe/Paris",
+    "country_code": "FR",
+    "utc_offset": "+01:00",
+    "dst": true,
+    "abbreviation": "CET",
+    "cities": ["Париж", "Марсель"]
+  },
+  {
+    "tz": "Europe/London",
+    "country_code": "GB",
+    "utc_offset": "+00:00",
+    "dst": true,
+    "abbreviation": "GMT",
+    "cities": ["Лондон", "Манчестер"]
+  },
+  {
+    "tz": "America/New_York",
+    "country_code": "US",
+    "utc_offset": "-05:00",
+    "dst": true,
+    "abbreviation": "EST",
+    "cities": ["Нью-Йорк", "Вашингтон"]
+  },
+  {
+    "tz": "America/Chicago",
+    "country_code": "US",
+    "utc_offset": "-06:00",
+    "dst": true,
+    "abbreviation": "CST",
+    "cities": ["Чикаго", "Даллас"]
+  },
+  {
+    "tz": "America/Denver",
+    "country_code": "US",
+    "utc_offset": "-07:00",
+    "dst": true,
+    "abbreviation": "MST",
+    "cities": ["Денвер"]
+  },
+  {
+    "tz": "America/Los_Angeles",
+    "country_code": "US",
+    "utc_offset": "-08:00",
+    "dst": true,
+    "abbreviation": "PST",
+    "cities": ["Лос-Анджелес", "Сан-Франциско"]
+  },
+  {
+    "tz": "Asia/Shanghai",
+    "country_code": "CN",
+    "utc_offset": "+08:00",
+    "dst": false,
+    "abbreviation": "CST",
+    "cities": ["Пекин", "Шанхай"]
+  },
+  {
+    "tz": "Asia/Tokyo",
+    "country_code": "JP",
+    "utc_offset": "+09:00",
+    "dst": false,
+    "abbreviation": "JST",
+    "cities": ["Токио", "Осака"]
+  },
+  {
+    "tz": "Asia/Kolkata",
+    "country_code": "IN",
+    "utc_offset": "+05:30",
+    "dst": false,
+    "abbreviation": "IST",
+    "cities": ["Дели", "Мумбаи"]
+  }
+]

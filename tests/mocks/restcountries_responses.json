@@ -1,0 +1,19 @@
+{
+  "success": [
+    {
+      "name": {
+        "common": "Russia",
+        "official": "Russian Federation"
+      },
+      "cca2": "RU",
+      "capital": ["Moscow"],
+      "population": 144104080,
+      "region": "Europe",
+      "flags": {
+        "png": "https://example.test/flags/ru.png",
+        "svg": "https://example.test/flags/ru.svg"
+      }
+    }
+  ],
+  "empty": []
+}

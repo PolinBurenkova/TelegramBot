@@ -1,0 +1,28 @@
+{
+  "success": {
+    "batchcomplete": "",
+    "query": {
+      "pages": {
+        "12345": {
+          "pageid": 12345,
+          "title": "Москва",
+          "extract": "Москва — столица России, крупнейший по численности населения город страны.",
+          "original": {
+            "source": "https://example.test/wikipedia/moscow.jpg"
+          }
+        }
+      }
+    }
+  },
+  "empty": {
+    "batchcomplete": "",
+    "query": {
+      "pages": {
+        "-1": {
+          "title": "Неизвестный город",
+          "missing": ""
+        }
+      }
+    }
+  }
+}

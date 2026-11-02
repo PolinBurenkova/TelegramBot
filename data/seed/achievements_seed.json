@@ -1,0 +1,58 @@
+[
+  {
+    "code": "first_city",
+    "name": "Первый город",
+    "description": "Назовите свой первый город",
+    "icon": "🏙️",
+    "condition": "first_city_named"
+  },
+  {
+    "code": "first_game",
+    "name": "Первая игра",
+    "description": "Сыграйте первую партию в «Города»",
+    "icon": "🎲",
+    "condition": "games_played >= 1"
+  },
+  {
+    "code": "first_win",
+    "name": "Первая победа",
+    "description": "Победите бота в «Городах»",
+    "icon": "🏆",
+    "condition": "wins >= 1"
+  },
+  {
+    "code": "polyglot",
+    "name": "Полиглот",
+    "description": "Назовите 50 городов",
+    "icon": "🗣️",
+    "condition": "cities_named >= 50"
+  },
+  {
+    "code": "traveler",
+    "name": "Путешественник",
+    "description": "Угадайте 10 стран в GeoGuessr",
+    "icon": "✈️",
+    "condition": "geo_countries >= 10"
+  },
+  {
+    "code": "legend",
+    "name": "Легенда",
+    "description": "Наберите 1000 XP",
+    "icon": "⭐",
+    "condition": "xp >= 1000"
+  },
+  {
+    "code": "geo_master",
+    "name": "Мастер GeoGuessr",
+    "description": "Средний балл раунда 3000+",
+    "icon": "🧭",
+    "condition": "geo_avg_score >= 3000"
+  },
+  {
+    "code": "weather_wizard",
+    "name": "Повелитель погоды",
+    "description": "20 запросов погоды по городам",
+    "icon": "🌦️",
+    "condition": "weather_requests >= 20"
+  }
+]

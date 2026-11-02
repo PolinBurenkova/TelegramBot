@@ -1,0 +1,23 @@
+{
+  "success": {
+    "data": [
+      {
+        "id": "123456789012345",
+        "thumb_1024_url": "https://example.test/mapillary/123456789012345_1024.jpg",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [37.6173, 55.7558]
+        }
+      }
+    ]
+  },
+  "empty": {
+    "data": []
+  },
+  "error": {
+    "error": {
+      "message": "Invalid access token",
+      "code": 190
+    }
+  }
+}

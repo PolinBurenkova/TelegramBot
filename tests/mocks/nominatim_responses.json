@@ -1,0 +1,13 @@
+{
+  "success": [
+    {
+      "place_id": 12345,
+      "display_name": "Москва, Россия",
+      "lat": "55.7558",
+      "lon": "37.6173",
+      "type": "city",
+      "class": "place"
+    }
+  ],
+  "empty": []
+}

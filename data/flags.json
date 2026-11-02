@@ -1,0 +1,227 @@
+[
+  {
+    "code": "RU",
+    "name": "Россия",
+    "name_en": "Russia",
+    "emoji": "🇷🇺",
+    "svg_url": "https://flagcdn.com/ru.svg",
+    "png_url": "https://flagcdn.com/w320/ru.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "BY",
+    "name": "Беларусь",
+    "name_en": "Belarus",
+    "emoji": "🇧🇾",
+    "svg_url": "https://flagcdn.com/by.svg",
+    "png_url": "https://flagcdn.com/w320/by.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "KZ",
+    "name": "Казахстан",
+    "name_en": "Kazakhstan",
+    "emoji": "🇰🇿",
+    "svg_url": "https://flagcdn.com/kz.svg",
+    "png_url": "https://flagcdn.com/w320/kz.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "UA",
+    "name": "Украина",
+    "name_en": "Ukraine",
+    "emoji": "🇺🇦",
+    "svg_url": "https://flagcdn.com/ua.svg",
+    "png_url": "https://flagcdn.com/w320/ua.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "MD",
+    "name": "Молдова",
+    "name_en": "Moldova",
+    "emoji": "🇲🇩",
+    "svg_url": "https://flagcdn.com/md.svg",
+    "png_url": "https://flagcdn.com/w320/md.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "GE",
+    "name": "Грузия",
+    "name_en": "Georgia",
+    "emoji": "🇬🇪",
+    "svg_url": "https://flagcdn.com/ge.svg",
+    "png_url": "https://flagcdn.com/w320/ge.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "AM",
+    "name": "Армения",
+    "name_en": "Armenia",
+    "emoji": "🇦🇲",
+    "svg_url": "https://flagcdn.com/am.svg",
+    "png_url": "https://flagcdn.com/w320/am.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "AZ",
+    "name": "Азербайджан",
+    "name_en": "Azerbaijan",
+    "emoji": "🇦🇿",
+    "svg_url": "https://flagcdn.com/az.svg",
+    "png_url": "https://flagcdn.com/w320/az.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "UZ",
+    "name": "Узбекистан",
+    "name_en": "Uzbekistan",
+    "emoji": "🇺🇿",
+    "svg_url": "https://flagcdn.com/uz.svg",
+    "png_url": "https://flagcdn.com/w320/uz.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "KG",
+    "name": "Киргизия",
+    "name_en": "Kyrgyzstan",
+    "emoji": "🇰🇬",
+    "svg_url": "https://flagcdn.com/kg.svg",
+    "png_url": "https://flagcdn.com/w320/kg.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "TJ",
+    "name": "Таджикистан",
+    "name_en": "Tajikistan",
+    "emoji": "🇹🇯",
+    "svg_url": "https://flagcdn.com/tj.svg",
+    "png_url": "https://flagcdn.com/w320/tj.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "TM",
+    "name": "Туркменистан",
+    "name_en": "Turkmenistan",
+    "emoji": "🇹🇲",
+    "svg_url": "https://flagcdn.com/tm.svg",
+    "png_url": "https://flagcdn.com/w320/tm.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "EE",
+    "name": "Эстония",
+    "name_en": "Estonia",
+    "emoji": "🇪🇪",
+    "svg_url": "https://flagcdn.com/ee.svg",
+    "png_url": "https://flagcdn.com/w320/ee.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "LV",
+    "name": "Латвия",
+    "name_en": "Latvia",
+    "emoji": "🇱🇻",
+    "svg_url": "https://flagcdn.com/lv.svg",
+    "png_url": "https://flagcdn.com/w320/lv.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "LT",
+    "name": "Литва",
+    "name_en": "Lithuania",
+    "emoji": "🇱🇹",
+    "svg_url": "https://flagcdn.com/lt.svg",
+    "png_url": "https://flagcdn.com/w320/lt.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "PL",
+    "name": "Польша",
+    "name_en": "Poland",
+    "emoji": "🇵🇱",
+    "svg_url": "https://flagcdn.com/pl.svg",
+    "png_url": "https://flagcdn.com/w320/pl.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "FI",
+    "name": "Финляндия",
+    "name_en": "Finland",
+    "emoji": "🇫🇮",
+    "svg_url": "https://flagcdn.com/fi.svg",
+    "png_url": "https://flagcdn.com/w320/fi.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "DE",
+    "name": "Германия",
+    "name_en": "Germany",
+    "emoji": "🇩🇪",
+    "svg_url": "https://flagcdn.com/de.svg",
+    "png_url": "https://flagcdn.com/w320/de.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "FR",
+    "name": "Франция",
+    "name_en": "France",
+    "emoji": "🇫🇷",
+    "svg_url": "https://flagcdn.com/fr.svg",
+    "png_url": "https://flagcdn.com/w320/fr.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "TR",
+    "name": "Турция",
+    "name_en": "Türkiye",
+    "emoji": "🇹🇷",
+    "svg_url": "https://flagcdn.com/tr.svg",
+    "png_url": "https://flagcdn.com/w320/tr.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "GB",
+    "name": "Великобритания",
+    "name_en": "United Kingdom",
+    "emoji": "🇬🇧",
+    "svg_url": "https://flagcdn.com/gb.svg",
+    "png_url": "https://flagcdn.com/w320/gb.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "US",
+    "name": "США",
+    "name_en": "United States",
+    "emoji": "🇺🇸",
+    "svg_url": "https://flagcdn.com/us.svg",
+    "png_url": "https://flagcdn.com/w320/us.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "CN",
+    "name": "Китай",
+    "name_en": "China",
+    "emoji": "🇨🇳",
+    "svg_url": "https://flagcdn.com/cn.svg",
+    "png_url": "https://flagcdn.com/w320/cn.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "JP",
+    "name": "Япония",
+    "name_en": "Japan",
+    "emoji": "🇯🇵",
+    "svg_url": "https://flagcdn.com/jp.svg",
+    "png_url": "https://flagcdn.com/w320/jp.png",
+    "source": "flagcdn"
+  },
+  {
+    "code": "IN",
+    "name": "Индия",
+    "name_en": "India",
+    "emoji": "🇮🇳",
+    "svg_url": "https://flagcdn.com/in.svg",
+    "png_url": "https://flagcdn.com/w320/in.png",
+    "source": "flagcdn"
+  }
+]

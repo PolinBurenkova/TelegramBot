@@ -1,0 +1,134 @@
+[
+  {
+    "title": "Красная площадь",
+    "description": "Главная площадь страны у стен Кремля",
+    "country_code": "RU",
+    "lat": 55.7539,
+    "lon": 37.6208,
+    "difficulty": "easy",
+    "image_url": "https://picsum.photos/seed/goroda-msk-red-square/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-msk-red-square/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Эрмитаж",
+    "description": "Зимний дворец на Дворцовой площади",
+    "country_code": "RU",
+    "lat": 59.9398,
+    "lon": 30.3146,
+    "difficulty": "easy",
+    "image_url": "https://picsum.photos/seed/goroda-spb-hermitage/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-spb-hermitage/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Казанский кремль",
+    "description": "Белая мечеть Кул-Шариф внутри крепости",
+    "country_code": "RU",
+    "lat": 55.7989,
+    "lon": 49.1054,
+    "difficulty": "medium",
+    "image_url": "https://picsum.photos/seed/goroda-kzn-kremlin/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-kzn-kremlin/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Плотинка",
+    "description": "Историческое ядро Екатеринбурга на реке Исеть",
+    "country_code": "RU",
+    "lat": 56.8389,
+    "lon": 60.6057,
+    "difficulty": "medium",
+    "image_url": "https://picsum.photos/seed/goroda-ekb-plotinka/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-ekb-plotinka/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Новосибирский оперный театр",
+    "description": "Крупнейшее театральное здание страны",
+    "country_code": "RU",
+    "lat": 55.0286,
+    "lon": 82.9209,
+    "difficulty": "medium",
+    "image_url": "https://picsum.photos/seed/goroda-nsk-opera/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-nsk-opera/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Красноярские Столбы",
+    "description": "Скалы-останцы посреди тайги",
+    "country_code": "RU",
+    "lat": 55.9333,
+    "lon": 92.7667,
+    "difficulty": "hard",
+    "image_url": "https://picsum.photos/seed/goroda-krsk-stolby/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-krsk-stolby/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Золотой мост",
+    "description": "Вантовый мост через бухту Золотой Рог",
+    "country_code": "RU",
+    "lat": 43.1198,
+    "lon": 131.8869,
+    "difficulty": "hard",
+    "image_url": "https://picsum.photos/seed/goroda-vvo-golden-bridge/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-vvo-golden-bridge/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Кижи",
+    "description": "Деревянные церкви на острове в Онежском озере",
+    "country_code": "RU",
+    "lat": 62.0667,
+    "lon": 35.2333,
+    "difficulty": "hard",
+    "image_url": "https://picsum.photos/seed/goroda-kizhi/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-kizhi/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Озеро Байкал",
+    "description": "Самое глубокое озеро планеты",
+    "country_code": "RU",
+    "lat": 53.5587,
+    "lon": 108.165,
+    "difficulty": "medium",
+    "image_url": "https://picsum.photos/seed/goroda-baikal/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-baikal/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Эльбрус",
+    "description": "Высочайшая вершина Европы",
+    "country_code": "RU",
+    "lat": 43.3499,
+    "lon": 42.4453,
+    "difficulty": "hard",
+    "image_url": "https://picsum.photos/seed/goroda-elbrus/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-elbrus/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Кафедральный собор Калининграда",
+    "description": "Готический собор на острове Канта",
+    "country_code": "RU",
+    "lat": 54.7065,
+    "lon": 20.5115,
+    "difficulty": "medium",
+    "image_url": "https://picsum.photos/seed/goroda-kgd-cathedral/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-kgd-cathedral/400/260",
+    "source": "seed"
+  },
+  {
+    "title": "Сочи",
+    "description": "Черноморский курорт у подножия Кавказа",
+    "country_code": "RU",
+    "lat": 43.5855,
+    "lon": 39.7231,
+    "difficulty": "easy",
+    "image_url": "https://picsum.photos/seed/goroda-sochi/1200/800",
+    "thumb_url": "https://picsum.photos/seed/goroda-sochi/400/260",
+    "source": "seed"
+  }
+]

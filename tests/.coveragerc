@@ -1,0 +1,28 @@
+# .coveragerc для тестов проекта «Города+».
+# Запуск (из каталога tests): pytest --cov=app --cov-config=.coveragerc
+# Пока pytest/coverage не запускались — файл только описывает конфигурацию.
+
+[run]
+source = app
+omit =
+    tests/*
+    migrations/*
+    */__pycache__/*
+    app/services/external/google_streetview.py
+    app/services/external/abstract_api.py
+    app/services/external/owm.py
+    app/services/external/restcountries.py
+    app/services/external/wikipedia.py
+    app/schemas/api_responses/google_sv.py
+
+[report]
+# порог намеренно 0: на старте покрытие не должно ломать прогон
+fail_under = 0
+show_missing = True
+skip_covered = False
+
+[html]
+directory = htmlcov
+
+[xml]
+output = coverage.xml

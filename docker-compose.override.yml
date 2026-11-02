@@ -1,0 +1,19 @@
+services:
+  bot:
+    volumes:
+      - ./app:/app/app
+      - ./migrations:/app/migrations
+      - ./scripts:/app/scripts
+      - ./logs:/app/logs
+    command: ["python", "-m", "app.main"]
+    environment:
+      LOG_LEVEL: DEBUG
+
+  postgres:
+    ports:
+      - "5432:5432"
+
+  redis:
+    ports:
+      - "6379:6379"
+      

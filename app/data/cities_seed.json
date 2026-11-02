@@ -1,0 +1,1122 @@
+[
+    {
+        "name":  "Москва",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Москва",
+        "population":  13010112,
+        "lat":  55.7558,
+        "lon":  37.6173,
+        "source":  "seed"
+    },
+    {
+        "name":  "Санкт-Петербург",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Санкт-Петербург",
+        "population":  5601911,
+        "lat":  59.9343,
+        "lon":  30.3351,
+        "source":  "seed"
+    },
+    {
+        "name":  "Новосибирск",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Новосибирская область",
+        "population":  1633595,
+        "lat":  55.0084,
+        "lon":  82.9357,
+        "source":  "seed"
+    },
+    {
+        "name":  "Екатеринбург",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Свердловская область",
+        "population":  1544376,
+        "lat":  56.8389,
+        "lon":  60.6057,
+        "source":  "seed"
+    },
+    {
+        "name":  "Казань",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Республика Татарстан",
+        "population":  1308660,
+        "lat":  55.7963,
+        "lon":  49.1088,
+        "source":  "seed"
+    },
+    {
+        "name":  "Нижний Новгород",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Нижегородская область",
+        "population":  1221998,
+        "lat":  56.3269,
+        "lon":  44.0059,
+        "source":  "seed"
+    },
+    {
+        "name":  "Челябинск",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Челябинская область",
+        "population":  1187960,
+        "lat":  55.1644,
+        "lon":  61.4368,
+        "source":  "seed"
+    },
+    {
+        "name":  "Самара",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Самарская область",
+        "population":  1163399,
+        "lat":  53.1959,
+        "lon":  50.1002,
+        "source":  "seed"
+    },
+    {
+        "name":  "Омск",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Омская область",
+        "population":  1125695,
+        "lat":  54.9885,
+        "lon":  73.3242,
+        "source":  "seed"
+    },
+    {
+        "name":  "Ростов-на-Дону",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Ростовская область",
+        "population":  1137704,
+        "lat":  47.2357,
+        "lon":  39.7015,
+        "source":  "seed"
+    },
+    {
+        "name":  "Уфа",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Республика Башкортостан",
+        "population":  1144809,
+        "lat":  54.7388,
+        "lon":  55.9721,
+        "source":  "seed"
+    },
+    {
+        "name":  "Красноярск",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Красноярский край",
+        "population":  1187771,
+        "lat":  56.0153,
+        "lon":  92.8932,
+        "source":  "seed"
+    },
+    {
+        "name":  "Воронеж",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Воронежская область",
+        "population":  1058261,
+        "lat":  51.672,
+        "lon":  39.1843,
+        "source":  "seed"
+    },
+    {
+        "name":  "Пермь",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Пермский край",
+        "population":  1061737,
+        "lat":  58.0105,
+        "lon":  56.2502,
+        "source":  "seed"
+    },
+    {
+        "name":  "Волгоград",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Волгоградская область",
+        "population":  1028036,
+        "lat":  48.708,
+        "lon":  44.5133,
+        "source":  "seed"
+    },
+    {
+        "name":  "Краснодар",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Краснодарский край",
+        "population":  1099086,
+        "lat":  45.0355,
+        "lon":  38.9753,
+        "source":  "seed"
+    },
+    {
+        "name":  "Саратов",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Саратовская область",
+        "population":  901361,
+        "lat":  51.5336,
+        "lon":  46.0343,
+        "source":  "seed"
+    },
+    {
+        "name":  "Тюмень",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Тюменская область",
+        "population":  861100,
+        "lat":  57.1522,
+        "lon":  65.5272,
+        "source":  "seed"
+    },
+    {
+        "name":  "Тольятти",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Самарская область",
+        "population":  684709,
+        "lat":  53.5303,
+        "lon":  49.3461,
+        "source":  "seed"
+    },
+    {
+        "name":  "Ижевск",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Удмуртская Республика",
+        "population":  623472,
+        "lat":  56.8527,
+        "lon":  53.2115,
+        "source":  "seed"
+    },
+    {
+        "name":  "Барнаул",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Алтайский край",
+        "population":  630877,
+        "lat":  53.3548,
+        "lon":  83.7698,
+        "source":  "seed"
+    },
+    {
+        "name":  "Ульяновск",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Ульяновская область",
+        "population":  617352,
+        "lat":  54.3142,
+        "lon":  48.4031,
+        "source":  "seed"
+    },
+    {
+        "name":  "Иркутск",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Иркутская область",
+        "population":  617473,
+        "lat":  52.2871,
+        "lon":  104.305,
+        "source":  "seed"
+    },
+    {
+        "name":  "Хабаровск",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Хабаровский край",
+        "population":  617168,
+        "lat":  48.4827,
+        "lon":  135.0838,
+        "source":  "seed"
+    },
+    {
+        "name":  "Владивосток",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Приморский край",
+        "population":  603519,
+        "lat":  43.1155,
+        "lon":  131.8855,
+        "source":  "seed"
+    },
+    {
+        "name":  "Йошкар-Ола",
+        "country_code":  "RU",
+        "country_name":  "Россия",
+        "region":  "Марий Эл",
+        "population":  280000,
+        "lat":  56.6388,
+        "lon":  47.8908,
+        "source":  "seed"
+    },
+    {
+        "name":  "Париж",
+        "country_code":  "FR",
+        "country_name":  "Франция",
+        "region":  "Иль-де-Франс",
+        "population":  2102650,
+        "lat":  48.8566,
+        "lon":  2.3522,
+        "source":  "seed"
+    },
+    {
+        "name":  "Лондон",
+        "country_code":  "GB",
+        "country_name":  "Великобритания",
+        "region":  "Англия",
+        "population":  8982000,
+        "lat":  51.5074,
+        "lon":  -0.1278,
+        "source":  "seed"
+    },
+    {
+        "name":  "Берлин",
+        "country_code":  "DE",
+        "country_name":  "Германия",
+        "region":  "Берлин",
+        "population":  3645000,
+        "lat":  52.52,
+        "lon":  13.405,
+        "source":  "seed"
+    },
+    {
+        "name":  "Мадрид",
+        "country_code":  "ES",
+        "country_name":  "Испания",
+        "region":  "Мадрид",
+        "population":  3223000,
+        "lat":  40.4168,
+        "lon":  -3.7038,
+        "source":  "seed"
+    },
+    {
+        "name":  "Рим",
+        "country_code":  "IT",
+        "country_name":  "Италия",
+        "region":  "Лацио",
+        "population":  2873000,
+        "lat":  41.9028,
+        "lon":  12.4964,
+        "source":  "seed"
+    },
+    {
+        "name":  "Вена",
+        "country_code":  "AT",
+        "country_name":  "Австрия",
+        "region":  "Вена",
+        "population":  1911000,
+        "lat":  48.2082,
+        "lon":  16.3738,
+        "source":  "seed"
+    },
+    {
+        "name":  "Прага",
+        "country_code":  "CZ",
+        "country_name":  "Чехия",
+        "region":  "Прага",
+        "population":  1309000,
+        "lat":  50.0755,
+        "lon":  14.4378,
+        "source":  "seed"
+    },
+    {
+        "name":  "Варшава",
+        "country_code":  "PL",
+        "country_name":  "Польша",
+        "region":  "Мазовия",
+        "population":  1793000,
+        "lat":  52.2297,
+        "lon":  21.0122,
+        "source":  "seed"
+    },
+    {
+        "name":  "Щецин",
+        "country_code":  "PL",
+        "country_name":  "Польша",
+        "region":  "Западно-Поморское",
+        "population":  402000,
+        "lat":  53.4285,
+        "lon":  14.5528,
+        "source":  "seed"
+    },
+    {
+        "name":  "Будапешт",
+        "country_code":  "HU",
+        "country_name":  "Венгрия",
+        "region":  "Будапешт",
+        "population":  1752000,
+        "lat":  47.4979,
+        "lon":  19.0402,
+        "source":  "seed"
+    },
+    {
+        "name":  "Бухарест",
+        "country_code":  "RO",
+        "country_name":  "Румыния",
+        "region":  "Бухарест",
+        "population":  1836000,
+        "lat":  44.4268,
+        "lon":  26.1025,
+        "source":  "seed"
+    },
+    {
+        "name":  "София",
+        "country_code":  "BG",
+        "country_name":  "Болгария",
+        "region":  "София",
+        "population":  1241000,
+        "lat":  42.6977,
+        "lon":  23.3219,
+        "source":  "seed"
+    },
+    {
+        "name":  "Белград",
+        "country_code":  "RS",
+        "country_name":  "Сербия",
+        "region":  "Белград",
+        "population":  1378000,
+        "lat":  44.7866,
+        "lon":  20.4489,
+        "source":  "seed"
+    },
+    {
+        "name":  "Загреб",
+        "country_code":  "HR",
+        "country_name":  "Хорватия",
+        "region":  "Загреб",
+        "population":  767000,
+        "lat":  45.815,
+        "lon":  15.9819,
+        "source":  "seed"
+    },
+    {
+        "name":  "Любляна",
+        "country_code":  "SI",
+        "country_name":  "Словения",
+        "region":  "Любляна",
+        "population":  284000,
+        "lat":  46.0569,
+        "lon":  14.5058,
+        "source":  "seed"
+    },
+    {
+        "name":  "Сараево",
+        "country_code":  "BA",
+        "country_name":  "Босния и Герцеговина",
+        "region":  "Сараево",
+        "population":  275000,
+        "lat":  43.8563,
+        "lon":  18.4131,
+        "source":  "seed"
+    },
+    {
+        "name":  "Скопье",
+        "country_code":  "MK",
+        "country_name":  "Северная Македония",
+        "region":  "Скопье",
+        "population":  540000,
+        "lat":  41.9981,
+        "lon":  21.4254,
+        "source":  "seed"
+    },
+    {
+        "name":  "Тирана",
+        "country_code":  "AL",
+        "country_name":  "Албания",
+        "region":  "Тирана",
+        "population":  418000,
+        "lat":  41.3275,
+        "lon":  19.8187,
+        "source":  "seed"
+    },
+    {
+        "name":  "Афины",
+        "country_code":  "GR",
+        "country_name":  "Греция",
+        "region":  "Аттика",
+        "population":  664000,
+        "lat":  37.9838,
+        "lon":  23.7275,
+        "source":  "seed"
+    },
+    {
+        "name":  "Стамбул",
+        "country_code":  "TR",
+        "country_name":  "Турция",
+        "region":  "Стамбул",
+        "population":  15460000,
+        "lat":  41.0082,
+        "lon":  28.9784,
+        "source":  "seed"
+    },
+    {
+        "name":  "Лиссабон",
+        "country_code":  "PT",
+        "country_name":  "Португалия",
+        "region":  "Лиссабон",
+        "population":  545000,
+        "lat":  38.7223,
+        "lon":  -9.1393,
+        "source":  "seed"
+    },
+    {
+        "name":  "Амстердам",
+        "country_code":  "NL",
+        "country_name":  "Нидерланды",
+        "region":  "Северная Голландия",
+        "population":  872000,
+        "lat":  52.3676,
+        "lon":  4.9041,
+        "source":  "seed"
+    },
+    {
+        "name":  "Брюссель",
+        "country_code":  "BE",
+        "country_name":  "Бельгия",
+        "region":  "Брюссель",
+        "population":  1209000,
+        "lat":  50.8503,
+        "lon":  4.3517,
+        "source":  "seed"
+    },
+    {
+        "name":  "Стокгольм",
+        "country_code":  "SE",
+        "country_name":  "Швеция",
+        "region":  "Стокгольм",
+        "population":  975000,
+        "lat":  59.3293,
+        "lon":  18.0686,
+        "source":  "seed"
+    },
+    {
+        "name":  "Осло",
+        "country_code":  "NO",
+        "country_name":  "Норвегия",
+        "region":  "Осло",
+        "population":  709000,
+        "lat":  59.9139,
+        "lon":  10.7522,
+        "source":  "seed"
+    },
+    {
+        "name":  "Хельсинки",
+        "country_code":  "FI",
+        "country_name":  "Финляндия",
+        "region":  "Уусимаа",
+        "population":  658000,
+        "lat":  60.1699,
+        "lon":  24.9384,
+        "source":  "seed"
+    },
+    {
+        "name":  "Копенгаген",
+        "country_code":  "DK",
+        "country_name":  "Дания",
+        "region":  "Ховедстаден",
+        "population":  644000,
+        "lat":  55.6761,
+        "lon":  12.5683,
+        "source":  "seed"
+    },
+    {
+        "name":  "Рейкьявик",
+        "country_code":  "IS",
+        "country_name":  "Исландия",
+        "region":  "Рейкьявик",
+        "population":  131000,
+        "lat":  64.1466,
+        "lon":  -21.9426,
+        "source":  "seed"
+    },
+    {
+        "name":  "Дублин",
+        "country_code":  "IE",
+        "country_name":  "Ирландия",
+        "region":  "Ленстер",
+        "population":  554000,
+        "lat":  53.3498,
+        "lon":  -6.2603,
+        "source":  "seed"
+    },
+    {
+        "name":  "Эдинбург",
+        "country_code":  "GB",
+        "country_name":  "Великобритания",
+        "region":  "Шотландия",
+        "population":  524000,
+        "lat":  55.9533,
+        "lon":  -3.1883,
+        "source":  "seed"
+    },
+    {
+        "name":  "Женева",
+        "country_code":  "CH",
+        "country_name":  "Швейцария",
+        "region":  "Женева",
+        "population":  201000,
+        "lat":  46.2044,
+        "lon":  6.1432,
+        "source":  "seed"
+    },
+    {
+        "name":  "Цюрих",
+        "country_code":  "CH",
+        "country_name":  "Швейцария",
+        "region":  "Цюрих",
+        "population":  421000,
+        "lat":  47.3769,
+        "lon":  8.5417,
+        "source":  "seed"
+    },
+    {
+        "name":  "Мюнхен",
+        "country_code":  "DE",
+        "country_name":  "Германия",
+        "region":  "Бавария",
+        "population":  1472000,
+        "lat":  48.1351,
+        "lon":  11.582,
+        "source":  "seed"
+    },
+    {
+        "name":  "Гамбург",
+        "country_code":  "DE",
+        "country_name":  "Германия",
+        "region":  "Гамбург",
+        "population":  1841000,
+        "lat":  53.5511,
+        "lon":  9.9937,
+        "source":  "seed"
+    },
+    {
+        "name":  "Милан",
+        "country_code":  "IT",
+        "country_name":  "Италия",
+        "region":  "Ломбардия",
+        "population":  1352000,
+        "lat":  45.4642,
+        "lon":  9.19,
+        "source":  "seed"
+    },
+    {
+        "name":  "Флоренция",
+        "country_code":  "IT",
+        "country_name":  "Италия",
+        "region":  "Тоскана",
+        "population":  383000,
+        "lat":  43.7696,
+        "lon":  11.2558,
+        "source":  "seed"
+    },
+    {
+        "name":  "Барселона",
+        "country_code":  "ES",
+        "country_name":  "Испания",
+        "region":  "Каталония",
+        "population":  1620000,
+        "lat":  41.3851,
+        "lon":  2.1734,
+        "source":  "seed"
+    },
+    {
+        "name":  "Киев",
+        "country_code":  "UA",
+        "country_name":  "Украина",
+        "region":  "Киев",
+        "population":  2884000,
+        "lat":  50.4501,
+        "lon":  30.5234,
+        "source":  "seed"
+    },
+    {
+        "name":  "Минск",
+        "country_code":  "BY",
+        "country_name":  "Беларусь",
+        "region":  "Минск",
+        "population":  1990000,
+        "lat":  53.9006,
+        "lon":  27.559,
+        "source":  "seed"
+    },
+    {
+        "name":  "Кишинёв",
+        "country_code":  "MD",
+        "country_name":  "Молдова",
+        "region":  "Кишинёв",
+        "population":  635000,
+        "lat":  47.0105,
+        "lon":  28.8638,
+        "source":  "seed"
+    },
+    {
+        "name":  "Рига",
+        "country_code":  "LV",
+        "country_name":  "Латвия",
+        "region":  "Рига",
+        "population":  632000,
+        "lat":  56.9496,
+        "lon":  24.1052,
+        "source":  "seed"
+    },
+    {
+        "name":  "Вильнюс",
+        "country_code":  "LT",
+        "country_name":  "Литва",
+        "region":  "Вильнюс",
+        "population":  580000,
+        "lat":  54.6872,
+        "lon":  25.2797,
+        "source":  "seed"
+    },
+    {
+        "name":  "Таллин",
+        "country_code":  "EE",
+        "country_name":  "Эстония",
+        "region":  "Харьюмаа",
+        "population":  437000,
+        "lat":  59.437,
+        "lon":  24.7536,
+        "source":  "seed"
+    },
+    {
+        "name":  "Тбилиси",
+        "country_code":  "GE",
+        "country_name":  "Грузия",
+        "region":  "Тбилиси",
+        "population":  1118000,
+        "lat":  41.7151,
+        "lon":  44.8271,
+        "source":  "seed"
+    },
+    {
+        "name":  "Ереван",
+        "country_code":  "AM",
+        "country_name":  "Армения",
+        "region":  "Ереван",
+        "population":  1075000,
+        "lat":  40.1792,
+        "lon":  44.4991,
+        "source":  "seed"
+    },
+    {
+        "name":  "Баку",
+        "country_code":  "AZ",
+        "country_name":  "Азербайджан",
+        "region":  "Баку",
+        "population":  2300000,
+        "lat":  40.4093,
+        "lon":  49.8671,
+        "source":  "seed"
+    },
+    {
+        "name":  "Алматы",
+        "country_code":  "KZ",
+        "country_name":  "Казахстан",
+        "region":  "Алматы",
+        "population":  2039000,
+        "lat":  43.222,
+        "lon":  76.8512,
+        "source":  "seed"
+    },
+    {
+        "name":  "Ташкент",
+        "country_code":  "UZ",
+        "country_name":  "Узбекистан",
+        "region":  "Ташкент",
+        "population":  2571000,
+        "lat":  41.2995,
+        "lon":  69.2401,
+        "source":  "seed"
+    },
+    {
+        "name":  "Бишкек",
+        "country_code":  "KG",
+        "country_name":  "Киргизия",
+        "region":  "Бишкек",
+        "population":  1074000,
+        "lat":  42.8746,
+        "lon":  74.5698,
+        "source":  "seed"
+    },
+    {
+        "name":  "Душанбе",
+        "country_code":  "TJ",
+        "country_name":  "Таджикистан",
+        "region":  "Душанбе",
+        "population":  863000,
+        "lat":  38.5598,
+        "lon":  68.787,
+        "source":  "seed"
+    },
+    {
+        "name":  "Ашхабад",
+        "country_code":  "TM",
+        "country_name":  "Туркменистан",
+        "region":  "Ашхабад",
+        "population":  1030000,
+        "lat":  37.9601,
+        "lon":  58.3261,
+        "source":  "seed"
+    },
+    {
+        "name":  "Пекин",
+        "country_code":  "CN",
+        "country_name":  "Китай",
+        "region":  "Пекин",
+        "population":  21540000,
+        "lat":  39.9042,
+        "lon":  116.4074,
+        "source":  "seed"
+    },
+    {
+        "name":  "Шанхай",
+        "country_code":  "CN",
+        "country_name":  "Китай",
+        "region":  "Шанхай",
+        "population":  24280000,
+        "lat":  31.2304,
+        "lon":  121.4737,
+        "source":  "seed"
+    },
+    {
+        "name":  "Токио",
+        "country_code":  "JP",
+        "country_name":  "Япония",
+        "region":  "Токио",
+        "population":  13960000,
+        "lat":  35.6762,
+        "lon":  139.6503,
+        "source":  "seed"
+    },
+    {
+        "name":  "Сеул",
+        "country_code":  "KR",
+        "country_name":  "Республика Корея",
+        "region":  "Сеул",
+        "population":  9776000,
+        "lat":  37.5665,
+        "lon":  126.978,
+        "source":  "seed"
+    },
+    {
+        "name":  "Ханой",
+        "country_code":  "VN",
+        "country_name":  "Вьетнам",
+        "region":  "Ханой",
+        "population":  8054000,
+        "lat":  21.0278,
+        "lon":  105.8342,
+        "source":  "seed"
+    },
+    {
+        "name":  "Бангкок",
+        "country_code":  "TH",
+        "country_name":  "Таиланд",
+        "region":  "Бангкок",
+        "population":  10539000,
+        "lat":  13.7563,
+        "lon":  100.5018,
+        "source":  "seed"
+    },
+    {
+        "name":  "Дели",
+        "country_code":  "IN",
+        "country_name":  "Индия",
+        "region":  "Дели",
+        "population":  16787000,
+        "lat":  28.7041,
+        "lon":  77.1025,
+        "source":  "seed"
+    },
+    {
+        "name":  "Мумбаи",
+        "country_code":  "IN",
+        "country_name":  "Индия",
+        "region":  "Махараштра",
+        "population":  12478000,
+        "lat":  19.076,
+        "lon":  72.8777,
+        "source":  "seed"
+    },
+    {
+        "name":  "Улан-Батор",
+        "country_code":  "MN",
+        "country_name":  "Монголия",
+        "region":  "Улан-Батор",
+        "population":  1645000,
+        "lat":  47.8864,
+        "lon":  106.9057,
+        "source":  "seed"
+    },
+    {
+        "name":  "Джакарта",
+        "country_code":  "ID",
+        "country_name":  "Индонезия",
+        "region":  "Джакарта",
+        "population":  10562000,
+        "lat":  -6.2088,
+        "lon":  106.8456,
+        "source":  "seed"
+    },
+    {
+        "name":  "Сидней",
+        "country_code":  "AU",
+        "country_name":  "Австралия",
+        "region":  "Новый Южный Уэльс",
+        "population":  5312000,
+        "lat":  -33.8688,
+        "lon":  151.2093,
+        "source":  "seed"
+    },
+    {
+        "name":  "Мельбурн",
+        "country_code":  "AU",
+        "country_name":  "Австралия",
+        "region":  "Виктория",
+        "population":  5078000,
+        "lat":  -37.8136,
+        "lon":  144.9631,
+        "source":  "seed"
+    },
+    {
+        "name":  "Окленд",
+        "country_code":  "NZ",
+        "country_name":  "Новая Зеландия",
+        "region":  "Окленд",
+        "population":  1657000,
+        "lat":  -36.8485,
+        "lon":  174.7633,
+        "source":  "seed"
+    },
+    {
+        "name":  "Каир",
+        "country_code":  "EG",
+        "country_name":  "Египет",
+        "region":  "Каир",
+        "population":  9540000,
+        "lat":  30.0444,
+        "lon":  31.2357,
+        "source":  "seed"
+    },
+    {
+        "name":  "Найроби",
+        "country_code":  "KE",
+        "country_name":  "Кения",
+        "region":  "Найроби",
+        "population":  4397000,
+        "lat":  -1.2921,
+        "lon":  36.8219,
+        "source":  "seed"
+    },
+    {
+        "name":  "Аддис-Абеба",
+        "country_code":  "ET",
+        "country_name":  "Эфиопия",
+        "region":  "Аддис-Абеба",
+        "population":  3384000,
+        "lat":  9.0192,
+        "lon":  38.7525,
+        "source":  "seed"
+    },
+    {
+        "name":  "Рабат",
+        "country_code":  "MA",
+        "country_name":  "Марокко",
+        "region":  "Рабат",
+        "population":  577000,
+        "lat":  34.0209,
+        "lon":  -6.8416,
+        "source":  "seed"
+    },
+    {
+        "name":  "Алжир",
+        "country_code":  "DZ",
+        "country_name":  "Алжир",
+        "region":  "Алжир",
+        "population":  2818000,
+        "lat":  36.7538,
+        "lon":  3.0588,
+        "source":  "seed"
+    },
+    {
+        "name":  "Тунис",
+        "country_code":  "TN",
+        "country_name":  "Тунис",
+        "region":  "Тунис",
+        "population":  638000,
+        "lat":  36.8065,
+        "lon":  10.1815,
+        "source":  "seed"
+    },
+    {
+        "name":  "Дакар",
+        "country_code":  "SN",
+        "country_name":  "Сенегал",
+        "region":  "Дакар",
+        "population":  1146000,
+        "lat":  14.7167,
+        "lon":  -17.4677,
+        "source":  "seed"
+    },
+    {
+        "name":  "Абуджа",
+        "country_code":  "NG",
+        "country_name":  "Нигерия",
+        "region":  "Федеральная столичная территория",
+        "population":  3000000,
+        "lat":  9.0765,
+        "lon":  7.3986,
+        "source":  "seed"
+    },
+    {
+        "name":  "Йоханнесбург",
+        "country_code":  "ZA",
+        "country_name":  "ЮАР",
+        "region":  "Гаутенг",
+        "population":  5648000,
+        "lat":  -26.2041,
+        "lon":  28.0473,
+        "source":  "seed"
+    },
+    {
+        "name":  "Яунде",
+        "country_code":  "CM",
+        "country_name":  "Камерун",
+        "region":  "Центральный регион",
+        "population":  2440000,
+        "lat":  3.848,
+        "lon":  11.5021,
+        "source":  "seed"
+    },
+    {
+        "name":  "Нью-Йорк",
+        "country_code":  "US",
+        "country_name":  "США",
+        "region":  "Нью-Йорк",
+        "population":  8419000,
+        "lat":  40.7128,
+        "lon":  -74.006,
+        "source":  "seed"
+    },
+    {
+        "name":  "Чикаго",
+        "country_code":  "US",
+        "country_name":  "США",
+        "region":  "Иллинойс",
+        "population":  2706000,
+        "lat":  41.8781,
+        "lon":  -87.6298,
+        "source":  "seed"
+    },
+    {
+        "name":  "Лос-Анджелес",
+        "country_code":  "US",
+        "country_name":  "США",
+        "region":  "Калифорния",
+        "population":  3980000,
+        "lat":  34.0522,
+        "lon":  -118.2437,
+        "source":  "seed"
+    },
+    {
+        "name":  "Торонто",
+        "country_code":  "CA",
+        "country_name":  "Канада",
+        "region":  "Онтарио",
+        "population":  2930000,
+        "lat":  43.6532,
+        "lon":  -79.3832,
+        "source":  "seed"
+    },
+    {
+        "name":  "Мехико",
+        "country_code":  "MX",
+        "country_name":  "Мексика",
+        "region":  "Мехико",
+        "population":  9209000,
+        "lat":  19.4326,
+        "lon":  -99.1332,
+        "source":  "seed"
+    },
+    {
+        "name":  "Гавана",
+        "country_code":  "CU",
+        "country_name":  "Куба",
+        "region":  "Гавана",
+        "population":  2132000,
+        "lat":  23.1136,
+        "lon":  -82.3666,
+        "source":  "seed"
+    },
+    {
+        "name":  "Богота",
+        "country_code":  "CO",
+        "country_name":  "Колумбия",
+        "region":  "Богота",
+        "population":  7413000,
+        "lat":  4.711,
+        "lon":  -74.0721,
+        "source":  "seed"
+    },
+    {
+        "name":  "Лима",
+        "country_code":  "PE",
+        "country_name":  "Перу",
+        "region":  "Лима",
+        "population":  9752000,
+        "lat":  -12.0464,
+        "lon":  -77.0428,
+        "source":  "seed"
+    },
+    {
+        "name":  "Сантьяго",
+        "country_code":  "CL",
+        "country_name":  "Чили",
+        "region":  "Сантьяго",
+        "population":  6158000,
+        "lat":  -33.4489,
+        "lon":  -70.6693,
+        "source":  "seed"
+    },
+    {
+        "name":  "Буэнос-Айрес",
+        "country_code":  "AR",
+        "country_name":  "Аргентина",
+        "region":  "Буэнос-Айрес",
+        "population":  3075000,
+        "lat":  -34.6037,
+        "lon":  -58.3816,
+        "source":  "seed"
+    },
+    {
+        "name":  "Рио-де-Жанейро",
+        "country_code":  "BR",
+        "country_name":  "Бразилия",
+        "region":  "Рио-де-Жанейро",
+        "population":  6748000,
+        "lat":  -22.9068,
+        "lon":  -43.1729,
+        "source":  "seed"
+    },
+    {
+        "name":  "Сан-Паулу",
+        "country_code":  "BR",
+        "country_name":  "Бразилия",
+        "region":  "Сан-Паулу",
+        "population":  12330000,
+        "lat":  -23.5505,
+        "lon":  -46.6333,
+        "source":  "seed"
+    }
+]

@@ -1,0 +1,6 @@
+FROM libretranslate/libretranslate:latest
+
+ENV LT_LOAD_ONLY=ru,en
+ENV LT_UPDATE_MODELS=true
+
+EXPOSE 5000

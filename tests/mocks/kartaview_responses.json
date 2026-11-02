@@ -1,0 +1,45 @@
+{
+  "success": {
+    "status": {
+      "httpCode": 200,
+      "apiCode": 200,
+      "message": "OK"
+    },
+    "currentPageItems": [
+      {
+        "id": 111,
+        "lat": 55.7558,
+        "lng": 37.6173,
+        "thumb_url": "https://example.test/kartaview/111_thumb.jpg",
+        "url": "https://example.test/kartaview/111.jpg"
+      }
+    ]
+  },
+  "success_result": {
+    "status": {
+      "httpCode": 200,
+      "apiCode": 200,
+      "message": "OK"
+    },
+    "currentPageItems": [],
+    "result": {
+      "data": [
+        {
+          "id": 222,
+          "lat": "55.7501",
+          "lng": "37.6100",
+          "thumb_url": "https://example.test/kartaview/222_thumb.jpg",
+          "url": "https://example.test/kartaview/222.jpg"
+        }
+      ]
+    }
+  },
+  "empty": {
+    "status": {
+      "httpCode": 200,
+      "apiCode": 200,
+      "message": "OK"
+    },
+    "currentPageItems": []
+  }
+}

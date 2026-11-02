@@ -1,0 +1,39 @@
+# Контекст сборки Docker. Шаблоны без ведущего слэша матчатся на любой
+# глубине — поэтому пути проекта анкорены через "/".
+#
+# .env намеренно НЕ исключён: compose читает его на хосте через env_file,
+# в образ он не попадает (приложение внутри контейнера берёт переменные
+# окружения, а не файл .env).
+/.git
+/.gitignore
+/.github
+/.dsh
+/.idea
+/.vscode
+/.ruff_cache
+/.mypy_cache
+/.pytest_cache
+/.coverage
+/tests
+/docs
+/data
+/logs
+/htmlcov
+/postgres_data
+/redis_data
+/.venv
+/.venv-1
+/venv
+/env
+/docker-compose.yml
+/docker-compose.override.yml
+/Dockerfile
+/Dockerfile.libretranslate
+/Makefile
+/README.md
+/check.py
+/create_project.py
+__pycache__
+*.py[cod]
+*.egg-info
+*.log

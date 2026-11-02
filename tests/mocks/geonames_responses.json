@@ -1,0 +1,31 @@
+{
+  "success": {
+    "totalResultsCount": 1,
+    "geonames": [
+      {
+        "geonameId": 524901,
+        "name": "Moscow",
+        "toponymName": "Moscow",
+        "countryName": "Russia",
+        "countryCode": "RU",
+        "population": 12506468,
+        "lat": "55.75222",
+        "lng": "37.61556",
+        "timezone": {
+          "timeZoneId": "Europe/Moscow",
+          "gmtOffset": 3
+        }
+      }
+    ]
+  },
+  "empty": {
+    "totalResultsCount": 0,
+    "geonames": []
+  },
+  "error": {
+    "status": {
+      "message": "user does not have a username",
+      "value": 10
+    }
+  }
+}

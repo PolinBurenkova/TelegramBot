@@ -1,0 +1,127 @@
+{
+  "RU": {
+    "iso3": "RUS",
+    "numeric": "643",
+    "dial_code": "+7"
+  },
+  "BY": {
+    "iso3": "BLR",
+    "numeric": "112",
+    "dial_code": "+375"
+  },
+  "KZ": {
+    "iso3": "KAZ",
+    "numeric": "398",
+    "dial_code": "+7"
+  },
+  "UA": {
+    "iso3": "UKR",
+    "numeric": "804",
+    "dial_code": "+380"
+  },
+  "MD": {
+    "iso3": "MDA",
+    "numeric": "498",
+    "dial_code": "+373"
+  },
+  "GE": {
+    "iso3": "GEO",
+    "numeric": "268",
+    "dial_code": "+995"
+  },
+  "AM": {
+    "iso3": "ARM",
+    "numeric": "051",
+    "dial_code": "+374"
+  },
+  "AZ": {
+    "iso3": "AZE",
+    "numeric": "031",
+    "dial_code": "+994"
+  },
+  "UZ": {
+    "iso3": "UZB",
+    "numeric": "860",
+    "dial_code": "+998"
+  },
+  "KG": {
+    "iso3": "KGZ",
+    "numeric": "417",
+    "dial_code": "+996"
+  },
+  "TJ": {
+    "iso3": "TJK",
+    "numeric": "762",
+    "dial_code": "+992"
+  },
+  "TM": {
+    "iso3": "TKM",
+    "numeric": "795",
+    "dial_code": "+993"
+  },
+  "EE": {
+    "iso3": "EST",
+    "numeric": "233",
+    "dial_code": "+372"
+  },
+  "LV": {
+    "iso3": "LVA",
+    "numeric": "428",
+    "dial_code": "+371"
+  },
+  "LT": {
+    "iso3": "LTU",
+    "numeric": "440",
+    "dial_code": "+370"
+  },
+  "PL": {
+    "iso3": "POL",
+    "numeric": "616",
+    "dial_code": "+48"
+  },
+  "FI": {
+    "iso3": "FIN",
+    "numeric": "246",
+    "dial_code": "+358"
+  },
+  "TR": {
+    "iso3": "TUR",
+    "numeric": "792",
+    "dial_code": "+90"
+  },
+  "DE": {
+    "iso3": "DEU",
+    "numeric": "276",
+    "dial_code": "+49"
+  },
+  "FR": {
+    "iso3": "FRA",
+    "numeric": "250",
+    "dial_code": "+33"
+  },
+  "GB": {
+    "iso3": "GBR",
+    "numeric": "826",
+    "dial_code": "+44"
+  },
+  "US": {
+    "iso3": "USA",
+    "numeric": "840",
+    "dial_code": "+1"
+  },
+  "CN": {
+    "iso3": "CHN",
+    "numeric": "156",
+    "dial_code": "+86"
+  },
+  "JP": {
+    "iso3": "JPN",
+    "numeric": "392",
+    "dial_code": "+81"
+  },
+  "IN": {
+    "iso3": "IND",
+    "numeric": "356",
+    "dial_code": "+91"
+  }
+}

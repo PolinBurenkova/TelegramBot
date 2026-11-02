@@ -1,0 +1,22 @@
+{
+  "success": {
+    "latitude": 55.75,
+    "longitude": 37.62,
+    "timezone": "Europe/Moscow",
+    "current": {
+      "time": "2026-10-01T12:00",
+      "temperature_2m": 4.2,
+      "wind_speed_10m": 3.6,
+      "weather_code": 3
+    },
+    "current_units": {
+      "temperature_2m": "°C",
+      "wind_speed_10m": "km/h"
+    }
+  },
+  "empty": {
+    "latitude": 55.75,
+    "longitude": 37.62,
+    "current": null
+  }
+}

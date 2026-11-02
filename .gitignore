@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venv-*/
+.venv*/
+venv/
+env/
+
+# Env
+.env
+!.env.example
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project data
+logs/*.log
+logs/archive/*
+!logs/.gitkeep
+postgres_data/*
+!postgres_data/.gitkeep
+redis_data/*
+!redis_data/.gitkeep
+.cache/*
+!.cache/.gitkeep
+data/*.zip
+data/*.txt
+data/*.db
+data/*.lock
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build
+dist/
+build/
+*.egg-info

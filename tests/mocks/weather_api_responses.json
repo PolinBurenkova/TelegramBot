@@ -1,0 +1,31 @@
+{
+  "success": {
+    "location": {
+      "name": "Москва",
+      "country": "Россия"
+    },
+    "current": {
+      "temp_c": 4.0,
+      "feelslike_c": 1.5,
+      "humidity": 80,
+      "wind_kph": 14.4,
+      "condition": {
+        "text": "Пасмурно",
+        "icon": "//example.test/weather/64x64/cloudy.png"
+      }
+    }
+  },
+  "empty": {
+    "location": {
+      "name": "Москва",
+      "country": "Россия"
+    },
+    "current": {}
+  },
+  "error": {
+    "error": {
+      "code": 1006,
+      "message": "No location found matching parameter 'q'"
+    }
+  }
+}

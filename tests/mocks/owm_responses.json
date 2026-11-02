@@ -1,0 +1,25 @@
+{
+  "success": {
+    "cod": 200,
+    "name": "Москва",
+    "main": {
+      "temp": 4.1,
+      "feels_like": 1.9,
+      "humidity": 78
+    },
+    "weather": [
+      {
+        "main": "Clouds",
+        "description": "пасмурно",
+        "icon": "04d"
+      }
+    ],
+    "wind": {
+      "speed": 4.0
+    }
+  },
+  "empty": {
+    "cod": "404",
+    "message": "city not found"
+  }
+}

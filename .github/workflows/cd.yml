@@ -1,0 +1,68 @@
+name: CD
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+concurrency:
+  group: cd-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy (docker compose)
+    # Деплой включается осознанно: repository variable DEPLOY_ENABLED должна
+    # быть строкой "true" (Settings → Variables). Пока переменная не задана,
+    # джоб пропускается и workflow остаётся зелёным — ни раннер, ни .env, ни
+    # секреты для этого не нужны.
+    if: ${{ vars.DEPLOY_ENABLED == 'true' }}
+    # Self-hosted раннер на прод-хосте с метками [self-hosted, production]:
+    # в каталоге репозитория уже лежит .env, и compose читает его через
+    # env_file — секреты в этот workflow и в логи не попадают.
+    runs-on: [self-hosted, production]
+    environment:
+      name: production
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Show toolchain
+        run: |
+          echo "Deploy ref: ${GITHUB_REF_NAME}"
+          echo "Commit: $(git rev-parse --short HEAD)"
+          docker version --format '{{.Server.Version}}'
+          docker compose version
+
+      - name: Ensure .env exists
+        run: |
+          if [ ! -f .env ]; then
+            echo "::error::.env is missing in the runner workspace"
+            exit 1
+          fi
+
+      - name: Build images
+        run: docker compose build migrate bot
+
+      - name: Start infrastructure
+        run: docker compose up -d postgres redis
+
+      - name: Apply migrations (gated)
+        # Ненулевой код возврата alembic останавливает деплой: бот не
+        # поднимается на устаревшей схеме.
+        run: docker compose run --rm --no-deps migrate
+
+      - name: Start bot
+        run: docker compose up -d --no-deps bot
+
+      - name: Verify containers
+        run: docker compose ps
+
+      - name: Logs on failure
+        if: failure()
+        run: docker compose logs --tail 100 migrate bot

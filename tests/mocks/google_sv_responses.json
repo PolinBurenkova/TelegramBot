@@ -1,0 +1,23 @@
+{
+  "success": {
+    "status": "OK",
+    "date": "2026-10-01",
+    "copyright": "© 2026 Google",
+    "results": [
+      {
+        "pano_id": "CAoSLEZGRRzY3JhbWJsZWQtcGFuby0x",
+        "location": {
+          "lat": 55.7558,
+          "lng": 37.6173
+        }
+      }
+    ]
+  },
+  "empty": {
+    "status": "ZERO_RESULTS"
+  },
+  "error": {
+    "status": "REQUEST_DENIED",
+    "error_message": "The provided API key is invalid."
+  }
+}

@@ -1,0 +1,73 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: cities_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-cities}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-cities}
+      POSTGRES_DB: ${POSTGRES_DB:-cities_bot}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: cities_redis
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  migrate:
+    build: .
+    container_name: cities_migrate
+    command: ["alembic", "upgrade", "head"]
+    env_file: .env
+    environment:
+      # Явный DSN внутри сети compose: перекрывает DATABASE_URL из .env,
+      # поэтому локальный SQLite из примера не «просочится» в контейнер.
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-cities}:${POSTGRES_PASSWORD:-cities}@postgres:5432/${POSTGRES_DB:-cities_bot}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  bot:
+    build: .
+    container_name: cities_bot
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-cities}:${POSTGRES_PASSWORD:-cities}@postgres:5432/${POSTGRES_DB:-cities_bot}
+      REDIS_URL: redis://redis:6379/0
+      FSM_REDIS_URL: redis://redis:6379/1
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+
+  libretranslate:
+    build:
+      context: .
+      dockerfile: Dockerfile.libretranslate
+    container_name: cities_libretranslate
+    profiles: ["translate"]
+    ports:
+      - "5000:5000"
+
+volumes:
+  postgres_data:
+  redis_data:

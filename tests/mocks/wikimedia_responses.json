@@ -1,0 +1,25 @@
+{
+  "success": {
+    "batchcomplete": "",
+    "query": {
+      "pages": {
+        "98765": {
+          "pageid": 98765,
+          "title": "File:Moscow Kremlin.jpg",
+          "imageinfo": [
+            {
+              "thumburl": "https://example.test/wikimedia/moscow_kremlin_1024.jpg",
+              "url": "https://example.test/wikimedia/moscow_kremlin.jpg"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "empty": {
+    "batchcomplete": "",
+    "query": {
+      "pages": {}
+    }
+  }
+}
