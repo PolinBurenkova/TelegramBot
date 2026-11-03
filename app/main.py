@@ -67,15 +67,15 @@ def setup_logger(level: str = "INFO") -> None:
 
 
 # ---------- Bot / Dispatcher ----------
-def create_bot() -> Bot:
+async def create_bot() -> Bot:
     """Build Bot instance from settings (delegates to app.bot.bot_factory)."""
     settings = get_settings()
     if not settings.bot.token:
         logger.error("BOT_TOKEN is empty — set it in .env")
         sys.exit(1)
-    from app.bot.bot_factory import create_bot as _factory_create_bot
+    from app.bot.bot_factory import create_bot_auto
 
-    return _factory_create_bot(settings)
+    return await create_bot_auto(settings)
 
 
 def create_dispatcher() -> Dispatcher:
@@ -170,7 +170,7 @@ async def main() -> None:
         logger.exception("Failed to init database")
         raise
 
-    bot = create_bot()
+    bot = await create_bot()
     dp = create_dispatcher()
 
     try:

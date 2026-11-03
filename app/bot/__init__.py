@@ -14,6 +14,10 @@ def __getattr__(name: str) -> Any:
         from app.bot.bot_factory import create_bot
 
         return create_bot
+    if name == "create_bot_auto":
+        from app.bot.bot_factory import create_bot_auto
+
+        return create_bot_auto
     if name == "create_dispatcher":
         from app.bot.dispatcher import create_dispatcher
 
@@ -21,4 +25,4 @@ def __getattr__(name: str) -> Any:
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 
 
-__all__ = ["create_bot", "create_dispatcher"]
+__all__ = ["create_bot", "create_bot_auto", "create_dispatcher"]

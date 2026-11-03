@@ -7,7 +7,7 @@ import logging
 from aiogram import Bot, Dispatcher
 
 from app.bot.bot_factory import (
-    create_bot,
+    create_bot_auto,
     is_proxy_error,
     mask_proxy,
     setup_bot_ui,
@@ -95,7 +95,14 @@ async def main() -> None:
         log.error(database_hint(exc))
         raise
 
-    bot = create_bot(settings)
+    if not settings.bot.token:
+        log.error(
+            "BOT_TOKEN пуст — впишите токен от @BotFather в .env "
+            "(@BotFather → /mybots → ваш бот → API Token)"
+        )
+        raise SystemExit(1)
+
+    bot = await create_bot_auto(settings)
     dp = create_dispatcher(settings)
 
     try:

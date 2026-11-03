@@ -19,7 +19,8 @@ handlers (aiogram routers)  →  services  →  repositories  →  models (SQLAl
 
 ## Потоки
 
-- **Старт бота**: `app/main.py` → `create_bot()` → `create_dispatcher()` →
+- **Старт бота**: `app/main.py` → `create_bot()` (авто-выбор транспорта:
+  VPN/прокси) → `create_dispatcher()` →
   `dp.include_router(root_router)` → polling (или webhook).
 - **Сессия БД на апдейт**: middleware открывает `AsyncSession` из
   `async_session_factory` и кладёт её в `data["session"]`.

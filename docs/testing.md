@@ -12,7 +12,7 @@ tests/
 │                      # fake_redis, sample_user, sample_city, mock_http, mock_http_factory
 ├── pytest.ini         # отдельный конфиг (testpaths = .), addopts = -q --strict-markers
 ├── .coveragerc        # source = app, fail_under = 0, заглушки внешних провайдеров в omit
-├── unit/              # 19 модулей: чистые функции, кеш, пагинация, circuit breaker, конфиг, меню, лок, сид, Update, команды, shutdown, прокси
+├── unit/              # 20 модулей: чистые функции, кеш, пагинация, circuit breaker, конфиг, меню, лок, сид, Update, команды, shutdown, прокси, транспорт
 ├── integration/       # 8 модулей: репозитории, сервисы, миграции (SQLite in-memory)
 ├── external/          # 6 модулей: провайдеры через httpx.MockTransport
 ├── mocks/             # 11 JSON-файлов `*_responses.json` (success/empty/error)
@@ -42,6 +42,7 @@ tests/
 | `unit/test_bot_commands.py` | 5 | меню команд: уникальность и формат имён, лимиты описаний, хендлер под каждую заявленную команду, наличие ключевых команд, непустые описания бота |
 | `unit/test_shutdown.py` | 3 | `run.shutdown`: закрывает сессию/storage/лок, не падает при исключениях в `close()`/`release()`, работает без лока |
 | `unit/test_proxy_guard.py` | 11 | прокси из `BOT_PROXY`: разбор `host:port`, падение на закрытом порту/пустом хосте, fallback на прямое соединение, строгий режим с `ProxyUnavailableError`, детекция прокси-ошибки по цепочке причин, маскирование логина/пароля |
+| `unit/test_transport.py` | 9 | транспорт `BOT_TRANSPORT`: явные `direct`/`proxy`, приоритет прямого соединения при включённом VPN, переход на прокси, возврат к прямому без прокси, ошибки в режиме `proxy` |
 | `integration/test_repositories.py` | 32 | `BaseRepo`, `GameRepo`, `MoveRepo`, `CityRepo`, `UserRepo`, `GeoLocationRepo`, `UserUsedCityRepo`, `StatsRepo`, `UserAchievementRepo` |
 | `integration/test_cities_game.py` | 14 | старт партии (бот-стартер, `moves_count = 1`), город без порога по населению, правило последней буквы, «й» как рабочая буква, повтор города, ход бота на «к» после «Нальчика», `WIN_BONUS`, статус `timeout` |
 | `integration/test_geoguessr.py` | 5 | `calculate_score` на дистанциях, `haversine`, выбор локации по сложности |
@@ -57,7 +58,7 @@ tests/
 | `external/test_maps.py` | 6 | URL/параметры Thunderforest, готовность провайдеров без ключа, каскад `maps` через `Settings.provider_order` |
 | `external/test_countries.py` | 8 | схема `RestCountry`, полный каскад `countries`, пустая цепочка → `AllProvidersFailedError` |
 
-Итого **254 тестовые функции** в 33 модулях (119 unit + 84 integration +
+Итого **263 тестовые функции** в 34 модулях (128 unit + 84 integration +
 51 external); параметризация увеличивает число проверок при запуске.
 
 ## Изоляция от сети, БД и Telegram

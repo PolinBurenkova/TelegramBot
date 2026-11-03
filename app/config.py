@@ -85,6 +85,10 @@ class Settings(BaseSettings):
     # в лог). Удобно, когда переменная окружения осталась от VPN-сессии, а
     # прокси-клиент не запущен. false — падать с ProxyUnavailableError.
     bot_proxy_fallback_direct: bool = True
+    # Транспорт до api.telegram.org: auto (по умолчанию), direct или proxy.
+    # auto: сначала пробуем прямое соединение (обычный системный VPN маршрутизирует
+    # трафик сам, настройка боту не нужна), при неудаче — прокси из BOT_PROXY.
+    bot_transport: str = "auto"
 
     # ==================== Геокодеры ====================
     geonames_username: str | None = None
@@ -279,6 +283,16 @@ class Settings(BaseSettings):
             return v.strip().upper()
         return v  # type: ignore[return-value]
 
+    @field_validator("bot_transport", mode="before")
+    @classmethod
+    def _normalize_transport(cls, v: object) -> str:
+        """auto / direct / proxy -> нижний регистр; неизвестное значение -> auto."""
+        if isinstance(v, str):
+            value = v.strip().lower()
+            if value in {"auto", "direct", "proxy"}:
+                return value
+        return "auto"
+
     # ==================== Модельные валидаторы ====================
 
     @model_validator(mode="after")
@@ -467,6 +481,11 @@ class _BotView:
     def proxy_fallback(self) -> bool:
         """Продолжать без прокси, если он недоступен (BOT_PROXY_FALLBACK_DIRECT)."""
         return bool(self._settings.bot_proxy_fallback_direct)
+
+    @property
+    def transport(self) -> str:
+        """Транспорт до Telegram: auto | direct | proxy (BOT_TRANSPORT)."""
+        return self._settings.bot_transport or "auto"
 
 
 class _RedisView:

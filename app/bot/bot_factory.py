@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import importlib.util
 import socket
+from collections.abc import Awaitable, Callable
 from urllib.parse import urlsplit
 
 from aiogram import Bot
@@ -39,6 +40,8 @@ DESCRIPTION = (
     "/achievements, /leaderboard, /settings, /help."
 )
 
+#: Транспорты до api.telegram.org.
+TRANSPORTS: frozenset[str] = frozenset({"auto", "direct", "proxy"})
 
 _PROXY_DEFAULT_PORTS: dict[str, int] = {
     "http": 8080,
@@ -48,6 +51,8 @@ _PROXY_DEFAULT_PORTS: dict[str, int] = {
     "socks5": 1080,
     "socks5h": 1080,
 }
+
+_SOCKS_SCHEMES: tuple[str, ...] = ("socks4://", "socks5://", "socks4h://", "socks5h://")
 
 
 def proxy_endpoint(proxy: str) -> tuple[str, int]:
@@ -77,9 +82,9 @@ def check_proxy_available(proxy: str, timeout: float = 2.0) -> None:
         raise ProxyUnavailableError(
             f"Прокси из BOT_PROXY недоступен ({host}:{port}): {exc}. "
             "Запустите прокси/VPN-клиент на этом порту либо уберите прокси: "
-            "в PowerShell — Remove-Item Env:BOT_PROXY (и закомментируйте "
-            "BOT_PROXY в .env), затем перезапустите бота. Без прокси бот "
-            "работает, если api.telegram.org доступен напрямую."
+            "в PowerShell — Remove-Item Env:BOT_PROXY, в .env закомментируйте "
+            "BOT_PROXY, затем перезапустите бота. Если включён обычный VPN, "
+            "прокси не нужен вовсе (BOT_TRANSPORT=auto пойдёт напрямую)."
         ) from exc
 
 
@@ -118,51 +123,136 @@ def is_proxy_error(exc: BaseException) -> bool:
     return False
 
 
-def create_session(settings: Settings) -> BaseSession:
-    """Сессия Telegram: прокси и таймаут из настроек.
+def _require_socks_support(proxy: str) -> None:
+    """Понятная ошибка, если выбран socks-прокси, а пакета нет."""
+    if proxy.startswith(_SOCKS_SCHEMES) and importlib.util.find_spec("aiohttp_socks") is None:
+        raise RuntimeError(
+            "Для socks-прокси нужен пакет aiohttp_socks: "
+            "pip install aiohttp_socks (или укажите http://-прокси в BOT_PROXY)"
+        )
 
-    Прокси нужен там, где ``api.telegram.org`` недоступен напрямую, — иначе
-    ``bot.get_me()`` падает с ``TelegramNetworkError: Request timeout error``.
-    Поддерживаются http/https и socks4/socks5 (для socks требуется
-    необязательный пакет ``aiohttp_socks``).
+
+def create_session(settings: Settings, transport: str | None = None) -> BaseSession:
+    """Сессия Telegram с учётом транспорта, прокси и таймаута.
+
+    ``transport`` (по умолчанию ``BOT_TRANSPORT``):
+      * ``direct`` — напрямую. Обычный системный VPN просто маршрутизирует
+        трафик сам, боту отдельная настройка не нужна;
+      * ``proxy``  — только через ``BOT_PROXY``, при недоступности падаем;
+      * ``auto``   — прокси используется, только если он реально отвечает.
     """
     # AiohttpSession → BaseSession принимает timeout как float (секунды),
     # а не ClientTimeout: см. aiogram/client/session/base.py::BaseSession.
     timeout = float(settings.bot.request_timeout)
+    mode = (transport or getattr(settings.bot, "transport", "auto") or "auto").lower()
     proxy = settings.bot.proxy
-    if proxy:
-        if proxy.startswith(("socks4://", "socks5://", "socks4h://", "socks5h://")):
-            if importlib.util.find_spec("aiohttp_socks") is None:
-                raise RuntimeError(
-                    "Для socks-прокси нужен пакет aiohttp_socks: "
-                    "pip install aiohttp_socks (или укажите http://-прокси в BOT_PROXY)"
-                )
-        try:
-            check_proxy_available(proxy)
-        except ProxyUnavailableError as exc:
-            # Переменная окружения BOT_PROXY часто остаётся «в наследство» от
-            # VPN-сессии, а прокси-клиент уже не запущен. По умолчанию не
-            # падаем, а идём напрямую (отключается BOT_PROXY_FALLBACK_DIRECT=false).
-            if not getattr(settings.bot, "proxy_fallback", True):
-                raise
-            logger.warning(
-                "{} Продолжаю без прокси: BOT_PROXY_FALLBACK_DIRECT=true.",
-                exc,
+
+    if mode == "direct":
+        if proxy:
+            logger.info("Транспорт: прямое соединение, BOT_PROXY игнорируется")
+        return AiohttpSession(timeout=timeout)
+
+    if mode == "proxy":
+        if not proxy:
+            raise ProxyUnavailableError(
+                "BOT_TRANSPORT=proxy, но BOT_PROXY не задан. Укажите адрес прокси "
+                "(например socks5://127.0.0.1:10808) или верните BOT_TRANSPORT=auto."
             )
-            return AiohttpSession(timeout=timeout)
+        _require_socks_support(proxy)
+        check_proxy_available(proxy)
         return AiohttpSession(proxy=proxy, timeout=timeout)
-    return AiohttpSession(timeout=timeout)
+
+    # auto: прокси — только если он жив, иначе прямое соединение (VPN).
+    if not proxy:
+        return AiohttpSession(timeout=timeout)
+    _require_socks_support(proxy)
+    try:
+        check_proxy_available(proxy)
+    except ProxyUnavailableError as exc:
+        # BOT_PROXY часто остаётся «в наследство» от VPN-сессии, а прокси-клиент
+        # уже не запущен. Не падаем, а идём напрямую (строгий режим —
+        # BOT_PROXY_FALLBACK_DIRECT=false).
+        if not getattr(settings.bot, "proxy_fallback", True):
+            raise
+        logger.warning("{} Продолжаю без прокси (BOT_TRANSPORT=auto).", exc)
+        return AiohttpSession(timeout=timeout)
+    return AiohttpSession(proxy=proxy, timeout=timeout)
 
 
-def create_bot(settings: Settings | None = None) -> Bot:
-    """Build Bot. Uses get_settings() if not provided."""
+async def probe_direct(settings: Settings) -> bool:
+    """Доступен ли api.telegram.org напрямую (включён обычный VPN).
+
+    Отдельная короткая сессия без прокси: успешный ``getMe`` значит, что
+    транспорт рабочий. ``401`` тоже считается успехом — значит связь есть, а
+    проблема только в токене (её покажет основной запуск).
+    """
+    probe_timeout = min(10.0, float(settings.bot.request_timeout))
+    session = AiohttpSession(timeout=probe_timeout)
+    bot = Bot(token=settings.bot.token, session=session)
+    try:
+        await bot.get_me()
+        return True
+    except TelegramUnauthorizedError:
+        return True
+    except Exception:  # noqa: BLE001 — любая сетевая ошибка = прямого доступа нет
+        return False
+    finally:
+        try:
+            await session.close()
+        except Exception:  # noqa: BLE001
+            pass
+
+
+async def detect_transport(
+    settings: Settings,
+    direct_probe: Callable[[], Awaitable[bool]] | None = None,
+    proxy_probe: Callable[[str], bool] | None = None,
+) -> str:
+    """Выбрать транспорт: прямое соединение (VPN) или прокси.
+
+    ``direct_probe`` и ``proxy_probe`` можно подменить в тестах, чтобы не ходить
+    в сеть.
+    """
+    mode = (settings.bot.transport or "auto").lower()
+    if mode in ("direct", "proxy"):
+        return mode
+
+    probe = direct_probe or (lambda: probe_direct(settings))
+    if await probe():
+        return "direct"
+
+    proxy = settings.bot.proxy
+    proxy_ok = proxy_probe or is_proxy_available
+    if proxy and proxy_ok(proxy):
+        return "proxy"
+    # Ни VPN, ни прокси не отвечают: идём напрямую, чтобы показать сетевую
+    # ошибку с подсказкой, а не «прокси недоступен».
+    return "direct"
+
+
+def create_bot(settings: Settings | None = None, transport: str | None = None) -> Bot:
+    """Build Bot. Uses Settings() if not provided."""
     if settings is None:
         settings = Settings()
     return Bot(
         token=settings.bot.token,
-        session=create_session(settings),
+        session=create_session(settings, transport=transport),
         default=DefaultBotProperties(parse_mode=ParseMode.HTML),
     )
+
+
+async def create_bot_auto(settings: Settings | None = None) -> Bot:
+    """Создать Bot, автоматически выбрав рабочий транспорт (VPN или прокси)."""
+    if settings is None:
+        settings = Settings()
+    transport = await detect_transport(settings)
+    if transport == "direct":
+        logger.info(
+            "Транспорт Telegram: прямое соединение (подходит обычный системный VPN)"
+        )
+    else:
+        logger.info("Транспорт Telegram: прокси {}", mask_proxy(settings.bot.proxy))
+    return create_bot(settings, transport=transport)
 
 
 async def setup_bot_ui(bot: Bot) -> None:
