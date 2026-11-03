@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import importlib.util
+import socket
+from urllib.parse import urlsplit
 
 from aiogram import Bot
 from aiogram.client.default import DefaultBotProperties
@@ -13,6 +15,7 @@ from aiogram.types import BotCommand, MenuButtonCommands
 from loguru import logger
 
 from app.config import Settings
+from app.exceptions import ProxyUnavailableError
 
 #: Команды бота: единый список для мобильного и десктопного клиента.
 #: Показываются в меню «/» и за кнопкой меню у поля ввода.
@@ -37,6 +40,84 @@ DESCRIPTION = (
 )
 
 
+_PROXY_DEFAULT_PORTS: dict[str, int] = {
+    "http": 8080,
+    "https": 8080,
+    "socks4": 1080,
+    "socks4h": 1080,
+    "socks5": 1080,
+    "socks5h": 1080,
+}
+
+
+def proxy_endpoint(proxy: str) -> tuple[str, int]:
+    """Вернуть (host, port) из строки прокси."""
+    parts = urlsplit(proxy if "://" in proxy else f"http://{proxy}")
+    port = parts.port or _PROXY_DEFAULT_PORTS.get(parts.scheme.lower(), 1080)
+    return parts.hostname or "", port
+
+
+def check_proxy_available(proxy: str, timeout: float = 2.0) -> None:
+    """Проверить, что прокси из ``BOT_PROXY`` слушает свой порт.
+
+    Прокси-клиент (v2rayN/xray и подобные) часто не запущен, и тогда
+    ``aiohttp_socks`` падает с ``ProxyConnectionError`` и длинным трейсбеком.
+    Проверяем заранее, чтобы выдать одну понятную ошибку с подсказкой.
+    """
+    host, port = proxy_endpoint(proxy)
+    if not host:
+        raise ProxyUnavailableError(
+            f"Некорректный BOT_PROXY={proxy!r}: не удалось выделить хост и порт. "
+            "Формат: http://host:port или socks5://host:port."
+        )
+    try:
+        with socket.create_connection((host, port), timeout=timeout):
+            pass
+    except OSError as exc:
+        raise ProxyUnavailableError(
+            f"Прокси из BOT_PROXY недоступен ({host}:{port}): {exc}. "
+            "Запустите прокси/VPN-клиент на этом порту либо уберите прокси: "
+            "в PowerShell — Remove-Item Env:BOT_PROXY (и закомментируйте "
+            "BOT_PROXY в .env), затем перезапустите бота. Без прокси бот "
+            "работает, если api.telegram.org доступен напрямую."
+        ) from exc
+
+
+def is_proxy_available(proxy: str, timeout: float = 2.0) -> bool:
+    """``True``, если прокси из ``BOT_PROXY`` принимает соединения."""
+    try:
+        check_proxy_available(proxy, timeout=timeout)
+    except ProxyUnavailableError:
+        return False
+    return True
+
+
+def mask_proxy(proxy: str | None) -> str:
+    """Безопасное представление прокси для логов (без логина/пароля)."""
+    if not proxy:
+        return "не задан"
+    parts = urlsplit(proxy if "://" in proxy else f"http://{proxy}")
+    if parts.username or parts.password:
+        host = parts.hostname or "?"
+        port = f":{parts.port}" if parts.port else ""
+        return f"{parts.scheme}://***@{host}{port}"
+    return proxy
+
+
+def is_proxy_error(exc: BaseException) -> bool:
+    """Похоже ли исключение (с цепочкой причин) на проблему с прокси."""
+    current: BaseException | None = exc
+    for _ in range(10):
+        if current is None:
+            return False
+        if "proxy" in type(current).__name__.lower():
+            return True
+        if "proxy" in str(current).lower():
+            return True
+        current = current.__cause__ or current.__context__
+    return False
+
+
 def create_session(settings: Settings) -> BaseSession:
     """Сессия Telegram: прокси и таймаут из настроек.
 
@@ -56,6 +137,19 @@ def create_session(settings: Settings) -> BaseSession:
                     "Для socks-прокси нужен пакет aiohttp_socks: "
                     "pip install aiohttp_socks (или укажите http://-прокси в BOT_PROXY)"
                 )
+        try:
+            check_proxy_available(proxy)
+        except ProxyUnavailableError as exc:
+            # Переменная окружения BOT_PROXY часто остаётся «в наследство» от
+            # VPN-сессии, а прокси-клиент уже не запущен. По умолчанию не
+            # падаем, а идём напрямую (отключается BOT_PROXY_FALLBACK_DIRECT=false).
+            if not getattr(settings.bot, "proxy_fallback", True):
+                raise
+            logger.warning(
+                "{} Продолжаю без прокси: BOT_PROXY_FALLBACK_DIRECT=true.",
+                exc,
+            )
+            return AiohttpSession(timeout=timeout)
         return AiohttpSession(proxy=proxy, timeout=timeout)
     return AiohttpSession(timeout=timeout)
 

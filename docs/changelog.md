@@ -40,7 +40,7 @@
   регистрирует `set_my_commands` (10 команд), кнопку меню `MenuButtonCommands`,
   короткое и полное описание бота; добавлены команды `/play` и `/achievements`,
   чтобы каждый пункт списка реально работал.
-- 243 тестовые функции в 32 модулях: `tests/unit` (18 модулей, 108 тестов),
+- 254 тестовые функции в 33 модулях: `tests/unit` (19 модулей, 119 тестов),
   `tests/integration` (8 модулей, 84 теста), `tests/external` (6 модулей,
   51 тест с `pytest.mark.external`).
 - Один экземпляр бота: лок `data/bot.lock` (`app/utils/single_instance.py`),
@@ -77,6 +77,12 @@
   вызывается `run.shutdown()`: закрывает aiohttp-сессию (в т.ч. прокси-коннектор),
   HTTP-клиент, storage и лок. Раньше при 401 сессия не закрывалась, и в консоли
   появлялись `Unclosed connector` и `RuntimeError: Event loop is closed`.
+- Прокси из `BOT_PROXY`: `create_session()` заранее проверяет хост:порт
+  (`check_proxy_available`) и по умолчанию **продолжает без прокси**, если тот
+  недоступен (`BOT_PROXY_FALLBACK_DIRECT=true`, предупреждение в лог) — вместо
+  трейсбека `aiohttp_socks.ProxyConnectionError`. Строгий режим
+  (`BOT_PROXY_FALLBACK_DIRECT=false`) поднимает `ProxyUnavailableError`. В лог
+  пишется `BOT_PROXY: …` с маскировкой пароля (`mask_proxy`).
 - `app/bot/middlewares/base.py`: хелперы `unwrap_event()`/`event_user()` —
   middleware на `dp.update` получают `Update`, поэтому `from_user` был `None`;
   `UserContextMiddleware` больше не теряет пользователя (`user`/`profile`/`_`

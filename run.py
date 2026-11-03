@@ -6,10 +6,15 @@ import logging
 
 from aiogram import Bot, Dispatcher
 
-from app.bot.bot_factory import create_bot, setup_bot_ui
+from app.bot.bot_factory import (
+    create_bot,
+    is_proxy_error,
+    mask_proxy,
+    setup_bot_ui,
+)
 from app.bot.dispatcher import create_dispatcher, ensure_no_polling_conflict
 from app.config import Settings
-from app.exceptions import PollingConflictError
+from app.exceptions import PollingConflictError, ProxyUnavailableError
 from app.models.base import init_models
 from app.utils.http_client import close_http_session
 from app.utils.logger import setup_logging
@@ -77,6 +82,10 @@ async def main() -> None:
             settings.db_fallback_url,
         )
 
+    # Видно, какой прокси реально используется: частая причина сбоя — забытая
+    # переменная окружения BOT_PROXY при незапущенном прокси-клиенте.
+    log.info("BOT_PROXY: %s", mask_proxy(settings.bot.proxy))
+
     # Ensure tables exist (idempotent; use Alembic in production)
     try:
         await init_models()
@@ -125,4 +134,19 @@ if __name__ == "__main__":
         raise SystemExit(1)
     except PollingConflictError as exc:
         log.error("%s", exc)
+        raise SystemExit(1)
+    except ProxyUnavailableError as exc:
+        log.error("%s", exc)
+        raise SystemExit(1)
+    except Exception as exc:
+        if is_proxy_error(exc):
+            log.error(
+                "Не удалось подключиться через прокси из BOT_PROXY: %s. "
+                "Запустите прокси/VPN-клиент либо уберите прокси: "
+                "Remove-Item Env:BOT_PROXY и закомментируйте BOT_PROXY в .env, "
+                "затем перезапустите бота.",
+                exc,
+            )
+            raise SystemExit(1)
+        log.exception("Fatal error: %s", exc)
         raise SystemExit(1)

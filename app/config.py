@@ -81,6 +81,10 @@ class Settings(BaseSettings):
     # Разрешать только один экземпляр бота на машине (лок-файл data/bot.lock).
     # Второй запуск иначе забирает getUpdates и получает TelegramConflictError.
     bot_single_instance: bool = True
+    # Если прокси из BOT_PROXY недоступен — продолжать без него (предупреждение
+    # в лог). Удобно, когда переменная окружения осталась от VPN-сессии, а
+    # прокси-клиент не запущен. false — падать с ProxyUnavailableError.
+    bot_proxy_fallback_direct: bool = True
 
     # ==================== Геокодеры ====================
     geonames_username: str | None = None
@@ -458,6 +462,11 @@ class _BotView:
     @property
     def single_instance(self) -> bool:
         return bool(self._settings.bot_single_instance)
+
+    @property
+    def proxy_fallback(self) -> bool:
+        """Продолжать без прокси, если он недоступен (BOT_PROXY_FALLBACK_DIRECT)."""
+        return bool(self._settings.bot_proxy_fallback_direct)
 
 
 class _RedisView:

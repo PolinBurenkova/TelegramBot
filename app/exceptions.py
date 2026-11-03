@@ -157,5 +157,14 @@ class PollingConflictError(RuntimeError):
     """Обновления уже забирает другой экземпляр бота (getUpdates conflict)."""
 
 
+class ProxyUnavailableError(RuntimeError):
+    """Прокси из BOT_PROXY не отвечает (клиент не запущен или неверный адрес).
+
+    Пробрасывается из ``app.bot.bot_factory.create_session`` до создания
+    aiohttp-сессии, чтобы вместо длинного трейсбека от ``aiohttp_socks``
+    пользователь увидел одну понятную подсказку.
+    """
+
+
 # Псевдонимы, используемые историческим кодом и check.py
 AllProvidersFailed = AllProvidersFailedError

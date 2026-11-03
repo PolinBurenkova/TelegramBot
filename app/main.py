@@ -1,10 +1,4 @@
-"""Entry point for Cities Plus Bot.
 
-Run:
-    python -m app.main
-or:
-    python run.py
-"""
 from __future__ import annotations
 
 import asyncio
@@ -17,9 +11,9 @@ from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 from loguru import logger
 
-from app.bot.bot_factory import setup_bot_ui
+from app.bot.bot_factory import is_proxy_error, mask_proxy, setup_bot_ui
 from app.config import get_settings
-from app.exceptions import PollingConflictError
+from app.exceptions import PollingConflictError, ProxyUnavailableError
 from app.models.base import init_models
 from app.utils.single_instance import SingleInstance
 
@@ -162,6 +156,7 @@ async def main() -> None:
     logger.info("Default locale: {}", settings.default_locale)
     logger.info("Admins: {}", settings.admin.ids)
     logger.info("Production: {}", settings.is_production)
+    logger.info("BOT_PROXY: {}", mask_proxy(settings.bot.proxy))
 
     # Ensure tables exist (idempotent; Alembic is preferred in production)
     try:
@@ -249,6 +244,18 @@ if __name__ == "__main__":
             settings.bot.proxy or "не задан",
         )
         sys.exit(1)
+    except ProxyUnavailableError as exc:
+        logger.error("{}", exc)
+        sys.exit(1)
     except Exception as e:
+        if is_proxy_error(e):
+            logger.error(
+                "Не удалось подключиться через прокси из BOT_PROXY: {}. "
+                "Запустите прокси/VPN-клиент либо уберите прокси: "
+                "Remove-Item Env:BOT_PROXY и закомментируйте BOT_PROXY в .env, "
+                "затем перезапустите бота.",
+                e,
+            )
+            sys.exit(1)
         logger.exception("Fatal error: {}", e)
         sys.exit(1)
