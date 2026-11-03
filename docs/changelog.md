@@ -40,6 +40,11 @@
   регистрирует `set_my_commands` (10 команд), кнопку меню `MenuButtonCommands`,
   короткое и полное описание бота; добавлены команды `/play` и `/achievements`,
   чтобы каждый пункт списка реально работал.
+- Развёртывание на Debian 13 без Docker: `deploy/deploy_debian13.sh` ставит
+  Python 3.13/3.12, PostgreSQL (роль `solar`, база `cities_bot`), Redis и git,
+  поднимает venv, применяет миграции, загружает сид городов и включает
+  systemd-службу `cities-bot`; повторный запуск обновляет код и перезапускает
+  бота. Инструкция — в `docs/deployment.md`.
 - 254 тестовые функции в 33 модулях: `tests/unit` (19 модулей, 119 тестов),
   `tests/integration` (8 модулей, 84 теста), `tests/external` (6 модулей,
   51 тест с `pytest.mark.external`).
@@ -72,6 +77,12 @@
 
 ### Fixed
 
+- `requirements.txt` пересохранён в UTF-8 без BOM (был UTF-16 LE): из-за
+  кодировки git считал файл бинарным, а `pip install -r requirements.txt` на
+  Linux падал бы с ошибкой декодирования.
+- Из репозитория убраны Windows-артефакты `.citiesbot/` (venv) и `run.zip`;
+  `.gitignore` дополнен правилами `.citiesbot/`, `.ruff_cache/`, `run.zip`,
+  `logs/*.json`, `deploy/*.env`.
 - `run.py` / `app/main.py`: корректное завершение при любой ошибке запуска —
   `setup_bot_ui()` и проверка конфликта перенесены внутрь `try`, а в `finally`
   вызывается `run.shutdown()`: закрывает aiohttp-сессию (в т.ч. прокси-коннектор),

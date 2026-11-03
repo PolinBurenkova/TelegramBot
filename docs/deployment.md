@@ -63,6 +63,54 @@ make migrate / make revision m="msg"
 `init_models()` (`Base.metadata.create_all`) остаётся для локального старта и
 тестов; в production схему ведёт Alembic.
 
+## Debian 13: нативная установка (Python + PostgreSQL + Redis + systemd)
+
+Для VPS без Docker есть готовый скрипт **`deploy/deploy_debian13.sh`** (Debian 13
+trixie, запуск от root). Он ставит системный Python 3.13 (на трикси это версия
+по умолчанию; принимается и 3.12), PostgreSQL, Redis, git и build-tools, создаёт
+роль `solar` с паролем `solarnotfound` и базу `cities_bot`, ставит venv и
+зависимости, заполняет серверные значения в `.env`, применяет миграции Alembic,
+загружает сид городов и включает systemd-юнит `cities-bot`.
+
+```bash
+# 1) на локальной машине: перенести .env (там BOT_TOKEN и ключи провайдеров)
+scp .env root@SERVER_IP:/root/cities_bot.env
+
+# 2) на сервере
+apt-get update -y && apt-get install -y git
+git clone https://github.com/PolinBurenkova/TelegramBot.git /root/bot-src
+bash /root/bot-src/deploy/deploy_debian13.sh
+```
+
+Параметры переопределяются переменными окружения: `REPO_URL`, `BRANCH`,
+`APP_DIR` (по умолчанию `/opt/cities-plus-bot`), `APP_USER` (`citiesbot`),
+`DB_NAME` (`cities_bot`), `DB_USER` (`solar`), `DB_PASSWORD` (`solarnotfound`),
+`ENV_FILE_SRC` (`/root/cities_bot.env`). Если репозиторий приватный, укажите
+токен: `REPO_URL=https://<ЛОГИН>:<PAT>@github.com/PolinBurenkova/TelegramBot.git`.
+
+Что скрипт кладёт в `.env` дополнительно к вашему файлу:
+`DATABASE_URL=postgresql+asyncpg://solar:...@localhost:5432/cities_bot`,
+`REDIS_URL=redis://127.0.0.1:6379/0`, `FSM_REDIS_URL=redis://127.0.0.1:6379/1`,
+`ENVIRONMENT=production`, `LOG_LEVEL=INFO`, `BOT_PROXY=` (на сервере прокси не
+нужен). Файл создаётся с правами `600` и владельцем сервисного пользователя.
+
+Повторный запуск того же скрипта = обновление: `git pull --ff-only`, переустановка
+зависимостей, `alembic upgrade head`, перезапуск службы.
+
+Проверка и обслуживание:
+
+```bash
+systemctl status cities-bot           # состояние
+journalctl -u cities-bot -n 100       # логи
+systemctl restart cities-bot          # перезапуск
+sudo -u postgres psql cities_bot      # база
+sudo -u citiesbot /opt/cities-plus-bot/.venv/bin/python -m scripts.healthcheck
+```
+
+Если в логе появилось `Run polling for bot @…` — бот работает. При
+`TelegramConflictError` проверьте, что не запущен второй экземпляр (у бота есть
+файловый лок `data/bot.lock`).
+
 ## Docker Compose
 
 `docker compose up --build` поднимает четыре обязательных сервиса и ждёт
@@ -110,8 +158,9 @@ LibreTranslate включается только профилем: `docker compo
 
 - Сборка образа и `docker compose up` в этой среде не выполнялись (`python.exe` и
   процессы блокируются политикой хоста), поэтому команды выше не прогонялись.
+- `deploy/deploy_debian13.sh` тоже не запускался: проверен только синтаксис
+  (`bash -n`, код возврата 0) и отсутствие CRLF. Установка пакетов, создание
+  роли/базы, миграции и systemd подтверждаются первым запуском на сервере.
 - `.dockerignore` пуст (0 байт), а `Dockerfile` делает `COPY . .` — в образ попадут
   `.env`, `.venv`, `data/`, `tests/`, то есть возможна утечка секретов и лишний вес.
-- Базовый образ `python:3.11-slim` не совпадает с требованием `>=3.12` из
-  `pyproject.toml`.
 - Webhook-режим в compose не настроен: порт 8080 (`/webhook`) не публикуется.
